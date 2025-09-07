@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rupesh Verma | Professional Portfolio</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Devicon CDN for skill icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0A0A0A;
+            color: #E2E8F0; /* slate-200 */
+        }
+
+        /* Custom gradient text */
+        .gradient-text {
+            background: linear-gradient(to right, #38bdf8, #818cf8); /* sky-400 to indigo-400 */
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .tagline-gradient {
+            background: linear-gradient(to right, #a855f7, #ec4899); /* purple-500 to pink-500 */
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Custom card styling */
+        .card {
+            background-color: rgba(23, 23, 23, 0.6); /* neutral-900 with opacity */
+            border: 1px solid #262626; /* neutral-800 */
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+            border-color: #404040; /* neutral-700 */
+        }
+        
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0A0A0A;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #262626;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #404040;
+        }
+
+        /* Styles for form inputs */
+        .form-input {
+            background-color: #171717; /* neutral-900 */
+            border: 1px solid #404040; /* neutral-700 */
+            color: #E2E8F0; /* slate-200 */
+            border-radius: 0.5rem;
+            padding: 0.75rem 1rem;
+            width: 100%;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: #38bdf8; /* sky-400 */
+            box-shadow: 0 0 0 2px rgba(56, 189, 248, 0.4);
+        }
+
+        /* Typing effect cursor */
+        .typing-cursor {
+            display: inline-block;
+            width: 3px;
+            background-color: #818cf8; /* Corresponds to indigo-400 */
+            animation: blink 0.8s infinite;
+            vertical-align: bottom;
+        }
+
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+    </style>
+</head>
+
+<body class="antialiased">
+
+    <!-- Header -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-black/50 backdrop-blur-sm border-b border-neutral-800">
+        <div class="container mx-auto px-4">
+            <nav class="flex justify-between items-center py-4">
+                <a href="#" class="text-xl font-bold gradient-text">Rupesh Verma</a>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#about" class="text-slate-300 hover:text-sky-400 transition-colors duration-300">About</a>
+                    <a href="#skills" class="text-slate-300 hover:text-sky-400 transition-colors duration-300">Skills</a>
+                    <a href="#work" class="text-slate-300 hover:text-sky-400 transition-colors duration-300">Work</a>
+                    <a href="#contact" class="text-slate-300 hover:text-sky-400 transition-colors duration-300">Contact</a>
+                </div>
+                <button id="mobile-menu-button" class="md:hidden text-slate-300">
+                    <i data-lucide="menu"></i>
+                </button>
+            </nav>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden px-4 pb-4">
+            <a href="#about" class="block py-2 text-slate-300 hover:text-sky-400">About</a>
+            <a href="#skills" class="block py-2 text-slate-300 hover:text-sky-400">Skills</a>
+            <a href="#work" class="block py-2 text-slate-300 hover:text-sky-400">Work</a>
+            <a href="#contact" class="block py-2 text-slate-300 hover:text-sky-400">Contact</a>
+        </div>
+    </header>
+
+    <main class="pt-24">
+
+        <!-- Hero Section -->
+        <section id="home" class="container mx-auto px-4 py-16 md:py-24 text-center">
+            <div class="flex flex-col items-center">
+                <img src="Images/propic.png" 
+                     onerror="this.onerror=null;this.src='https://placehold.co/160x160/171717/E2E8F0?text=RV';"
+                     alt="Profile Picture of Rupesh Verma" 
+                     class="w-40 h-40 rounded-full border-4 border-neutral-800 shadow-lg mb-6">
+                <h1 class="text-4xl md:text-6xl font-bold tracking-tight mb-4">
+                    <span class="text-slate-100">Hi! It's me Rupesh Verma</span>
+                    <br>
+                    <span class="text-slate-100">a </span><span id="typing-text" class="gradient-text"></span><span id="typing-cursor" class="typing-cursor"></span>
+                    <br>
+                    <span class="tagline-gradient">Code, Create, Innovate.</span>
+                </h1>
+                <p class="max-w-2xl mx-auto text-lg text-slate-400 mb-8">
+                    Building the future with every line of code. Passionate about creating elegant, efficient, and user-friendly web experiences.
+                </p>
+                <div class="flex flex-wrap justify-center gap-4">
+                    <a href="#contact" class="bg-sky-500 text-white font-semibold px-8 py-3 rounded-lg hover:bg-sky-600 transition-all duration-300">
+                        Get In Touch
+                    </a>
+                    <a href="#work" class="bg-neutral-800 text-slate-200 font-semibold px-8 py-3 rounded-lg hover:bg-neutral-700 transition-all duration-300">
+                        View My Work
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="container mx-auto px-4 py-16 md:py-24">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12"><span class="gradient-text">About Me</span></h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="card p-6 rounded-xl">
+                    <h3 class="text-2xl font-semibold mb-4 text-slate-100">Education</h3>
+                    <ul class="space-y-3 text-slate-400">
+                        <li><span class="font-semibold text-slate-300">BCA</span> - LNCT University, Bhopal (2022 - 2025)</li>
+                        <li><span class="font-semibold text-slate-300">Higher Secondary</span> - AVM School Makhan Nagar</li>
+                    </ul>
+                </div>
+                <div class="card p-6 rounded-xl">
+                    <h3 class="text-2xl font-semibold mb-4 text-slate-100">Work Experience</h3>
+                    <div class="space-y-6">
+                        <div>
+                            <div class="flex flex-col sm:flex-row justify-between sm:items-baseline mb-1">
+                                <h4 class="font-semibold text-slate-200">Full Stack Developer & UI/UX Designer</h4>
+                                <p class="text-sm text-slate-500 sm:text-right">July 2025 - Present</p>
+                            </div>
+                            <p class="text-slate-400 text-sm">Developing full-stack applications and designing intuitive user interfaces for a global clientele on the <span class="text-green-500 font-semibold">Fiverr</span> freelance platform.</p>
+                        </div>
+                        <div class="border-t border-neutral-800"></div>
+                        <div>
+                            <div class="flex flex-col sm:flex-row justify-between sm:items-baseline mb-1">
+                                <h4 class="font-semibold text-slate-200">Front-End Developer Intern</h4>
+                                 <p class="text-sm text-slate-500 sm:text-right">June 2025 (1-Month)</p>
+                            </div>
+                            <p class="text-slate-400 text-sm">Cognifyz Technology (Project-Based)</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card p-6 rounded-xl flex flex-col">
+                    <h3 class="text-2xl font-semibold mb-4 text-slate-100">Certifications</h3>
+                    <ul id="certifications-list" class="space-y-3 text-slate-400 flex-1">
+                        <li>Ethical Hacker - Cisco</li>
+                        <li>Python Programming - Udemy</li>
+                        <li>Cyber Security Basics - Cisco</li>
+                        <li class="hidden">Advanced JavaScript - Great Learning</li>
+                        <li class="hidden">React - The Complete Guide - Udemy</li>
+                    </ul>
+                    <a href="certificate.html" class="text-sky-400 hover:text-sky-300 font-semibold mt-4 self-start">
+                       See More
+                    </a>
+                </div>
+                <div class="card p-6 rounded-xl flex flex-col">
+                    <h3 class="text-2xl font-semibold mb-4 text-slate-100">Achievements</h3>
+                    <ul id="achievements-list" class="space-y-3 text-slate-400 flex-1">
+                        <li>50+ Major and Minor Projects Created</li>
+                        <li>300+ Leetcode Problems Solved</li>
+                        <li>5+ years of experience in computer science</li>
+                        <li class="hidden">Top 10% in National Coding Olympiad</li>
+                        <li class="hidden">Winner of University Hackathon 2024</li>
+                    </ul>
+                    <a href="achievement.html" class="text-sky-400 hover:text-sky-300 font-semibold mt-4 self-start">
+                     See More
+                   </a>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="py-16 md:py-24 bg-neutral-900/50">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-12"><span class="gradient-text">My Professional Skillset</span></h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        
+                    <!-- Frontend Skills -->
+                    <div class="card p-6 rounded-xl">
+                        <h3 class="text-xl font-bold text-slate-100 mb-6 text-center">Frontend Development</h3>
+                        <div class="space-y-5">
+                            <!-- HTML5 -->
+                            <div class="skill-item">
+                                <div class="flex items-center justify-between mb-1">
+                                    <div class="flex items-center gap-3">
+                                        <i class="devicon-html5-plain colored text-2xl"></i>
+                                        <span class="font-medium text-slate-300">HTML5</span>
+                                    </div>
+                                    <span class="text-sm text-slate-400">95%</span>
+                                </div>
+                                <div class="w-full bg-neutral-700 rounded-full h-2.5">
+                                    <div class="bg-sky-500 h-2.5 rounded-full" style="width: 95%"></div>
+                                </div>
+                            </div>
+                            <!-- CSS3 -->
+                            <div class="skill-item">
+                                <div class="flex items-center justify-between mb-1">
+                                     <div class="flex items-center gap-3">
+                                        <i class="devicon-css3-plain colored text-2xl"></i>
+                                        <span class="font-medium text-slate-300">CSS3</span>
+                                    </div>
+                                    <span class="text-sm text-slate-400">90%</span>
+                                </div>
+                                <div class="w-full bg-neutral-700 rounded-full h-2.5">
+                                    <div class="bg-sky-500 h-2.5 rounded-full" style="width: 90%"></div>
+                                </div>
+                            </div>
+                            <!-- JavaScript -->
+                            <div class="skill-item">
+                                <div class="flex items-center justify-between mb-1">
+                                    <div class="flex items-center gap-3">
+                                        <i class="devicon-javascript-plain colored text-2xl"></i>
+                                        <span class="font-medium text-slate-300">JavaScript</span>
+                                    </div>
+                                    <span class="text-sm text-slate-400">85%</span>
+                                </div>
+                                <div class="w-full bg-neutral-700 rounded-full h-2.5">
+                                    <div class="bg-indigo-500 h-2.5 rounded-full" style="width: 85%"></div>
+                                </div>
+                            </div>
+                             <!-- React.js -->
+                            <div class="skill-item">
+                                <div class="flex items-center justify-between mb-1">
+                                    <div class="flex items-center gap-3">
+                                        <i class="devicon-react-original colored text-2xl"></i>
+                                        <span class="font-medium text-slate-300">React.js</span>
+                                    </div>
+                                    <span class="text-sm text-slate-400">80%</span>
+                                </div>
+                                <div class="w-full bg-neutral-700 rounded-full h-2.5">
+                                    <div class="bg-indigo-500 h-2.5 rounded-full" style="width: 80%"></div>
+                                </div>
+                            </div>
+                            <!-- Angular -->
+                            <div class="skill-item">
+                                <div class="flex items-center justify-between mb-1">
+                                     <div class="flex items-center gap-3">
+                                        <i class="devicon-angularjs-plain colored text-2xl"></i>
+                                        <span class="font-medium text-slate-300">Angular</span>
+                                    </div>
+                                    <span class="text-sm text-slate-400">75%</span>
+                                </div>
+                                <div class="w-full bg-neutral-700 rounded-full h-2.5">
+                                    <div class="bg-indigo-500 h-2.5 rounded-full" style="width: 75%"></div>
+                                </div>
+                            </div>
+                            <!-- Tailwind CSS -->
+                            <div class="skill-item">
+                                <div class="flex items-center justify-between mb-1">
+                                    <div class="flex items-center gap-3">
+                                        <i class="devicon-tailwindcss-plain colored text-2xl"></i>
+                                        <span class="font-medium text-slate-300">Tailwind CSS</span>
+                                    </div>
+                                    <span class="text-sm text-slate-400">90%</span>
+                                </div>
+                                <div class="w-full bg-neutral-700 rounded-full h-2.5">
+                                    <div class="bg-sky-500 h-2.5 rounded-full" style="width: 90%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+        
+                    <!-- Backend Skills -->
+                    <div class="card p-6 rounded-xl">
+                        <h3 class="text-xl font-bold text-slate-100 mb-6 text-center">Backend & Databases</h3>
+                        <div class="space-y-5">
+                            <!-- Node.js -->
+                            <div class="skill-item">
+                                <div class="flex items-center justify-between mb-1">
+                                    <div class="flex items-center gap-3">
+                                        <i class="devicon-nodejs-plain colored text-2xl"></i>
+                                        <span class="font-medium text-slate-300">Node.js</span>
+                                    </div>
+                                    <span class="text-sm text-slate-400">80%</span>
+                                </div>
+                                <div class="w-full bg-neutral-700 rounded-full h-2.5">
+                                    <div class="bg-green-500 h-2.5 rounded-full" style="width: 80%"></div>
+                                </div>
+                            </div>
+                             <!-- Express.js -->
+                            <div class="skill-item">
+                                <div class="flex items-center justify-between mb-1">
+                                    <div class="flex items-center gap-3">
+                                        <i class="devicon-express-original text-2xl text-slate-200"></i>
+                                        <span class="font-medium text-slate-300">Express.js</span>
+                                    </div>
+                                    <span class="text-sm text-slate-400">85%</span>
+                                </div>
+                                <div class="w-full bg-neutral-700 rounded-full h-2.5">
+                                    <div class="bg-green-500 h-2.5 rounded-full" style="width: 85%"></div>
+                                </div>
+                            </div>
+                            <!-- Python -->
+                            <div class="skill-item">
+                                <div class="flex items-center justify-between mb-1">
+                                    <div class="flex items-center gap-3">
+                                        <i class="devicon-python-plain colored text-2xl"></i>
+                                        <span class="font-medium text-slate-300">Python</span>
+                                    </div>
+                                    <span class="text-sm text-slate-400">70%</span>
+                                </div>
+                                <div class="w-full bg-neutral-700 rounded-full h-2.5">
+                                    <div class="bg-yellow-500 h-2.5 rounded-full" style="width: 70%"></div>
+                                </div>
+                            </div>
+                            <!-- MySQL -->
+                            <div class="skill-item">
+                                <div class="flex items-center justify-between mb-1">
+                                    <div class="flex items-center gap-3">
+                                        <i class="devicon-mysql-plain colored text-2xl"></i>
+                                        <span class="font-medium text-slate-300">MySQL</span>
+                                    </div>
+                                    <span class="text-sm text-slate-400">75%</span>
+                                </div>
+                                <div class="w-full bg-neutral-700 rounded-full h-2.5">
+                                    <div class="bg-blue-500 h-2.5 rounded-full" style="width: 75%"></div>
+                                </div>
+                            </div>
+                            <!-- MongoDB -->
+                            <div class="skill-item">
+                                <div class="flex items-center justify-between mb-1">
+                                    <div class="flex items-center gap-3">
+                                        <i class="devicon-mongodb-plain colored text-2xl"></i>
+                                        <span class="font-medium text-slate-300">MongoDB</span>
+                                    </div>
+                                    <span class="text-sm text-slate-400">70%</span>
+                                </div>
+                                <div class="w-full bg-neutral-700 rounded-full h-2.5">
+                                    <div class="bg-green-500 h-2.5 rounded-full" style="width: 70%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Tools & Others -->
+                    <div class="card p-6 rounded-xl">
+                         <h3 class="text-xl font-bold text-slate-100 mb-6 text-center">Tools & Software</h3>
+                        <div class="space-y-5">
+                            <!-- Git -->
+                            <div class="skill-item">
+                                <div class="flex items-center justify-between mb-1">
+                                    <div class="flex items-center gap-3">
+                                        <i class="devicon-git-plain colored text-2xl"></i>
+                                        <span class="font-medium text-slate-300">Git & GitHub</span>
+                                    </div>
+                                    <span class="text-sm text-slate-400">90%</span>
+                                </div>
+                                <div class="w-full bg-neutral-700 rounded-full h-2.5">
+                                    <div class="bg-red-500 h-2.5 rounded-full" style="width: 90%"></div>
+                                </div>
+                            </div>
+                            <!-- Docker -->
+                            <div class="skill-item">
+                                <div class="flex items-center justify-between mb-1">
+                                    <div class="flex items-center gap-3">
+                                        <i class="devicon-docker-plain colored text-2xl"></i>
+                                        <span class="font-medium text-slate-300">Docker</span>
+                                    </div>
+                                    <span class="text-sm text-slate-400">60%</span>
+                                </div>
+                                <div class="w-full bg-neutral-700 rounded-full h-2.5">
+                                    <div class="bg-blue-500 h-2.5 rounded-full" style="width: 60%"></div>
+                                </div>
+                            </div>
+                            <!-- Figma -->
+                            <div class="skill-item">
+                                <div class="flex items-center justify-between mb-1">
+                                    <div class="flex items-center gap-3">
+                                        <i class="devicon-figma-plain colored text-2xl"></i>
+                                        <span class="font-medium text-slate-300">Figma</span>
+                                    </div>
+                                    <span class="text-sm text-slate-400">85%</span>
+                                </div>
+                                <div class="w-full bg-neutral-700 rounded-full h-2.5">
+                                    <div class="bg-purple-500 h-2.5 rounded-full" style="width: 85%"></div>
+                                </div>
+                            </div>
+                            <!-- Power BI -->
+                            <div class="skill-item">
+                                <div class="flex items-center justify-between mb-1">
+                                    <div class="flex items-center gap-3">
+                                        <i data-lucide="bar-chart-2" class="w-6 h-6 text-yellow-400"></i>
+                                        <span class="font-medium text-slate-300">Power BI</span>
+                                    </div>
+                                    <span class="text-sm text-slate-400">70%</span>
+                                </div>
+                                <div class="w-full bg-neutral-700 rounded-full h-2.5">
+                                    <div class="bg-yellow-400 h-2.5 rounded-full" style="width: 70%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Work Section -->
+        <section id="work" class="container mx-auto px-4 py-16 md:py-24">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12"><span class="gradient-text">Featured Projects</span></h2>
+            <div id="projects-grid" class="grid md:grid-cols-2 gap-8">
+                
+                <!-- Project Card: NeuroFocus -->
+                <div class="card rounded-xl overflow-hidden">
+                    <img src="Images/neurofocus.png" 
+                         onerror="this.onerror=null;this.src='https://placehold.co/600x400/171717/a855f7?text=Project+Image';"
+                         alt="NeuroFocus Project" class="w-full h-auto object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-slate-100 mb-2">NeuroFocus</h3>
+                        <p class="text-slate-400 mb-4">A productivity dashboard created using HTML, Tailwind CSS, JS, and Bootstrap.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-purple-900/50 text-purple-300 text-xs font-semibold px-2.5 py-1 rounded-full">HTML</span>
+                            <span class="bg-purple-900/50 text-purple-300 text-xs font-semibold px-2.5 py-1 rounded-full">Tailwind CSS</span>
+                            <span class="bg-purple-900/50 text-purple-300 text-xs font-semibold px-2.5 py-1 rounded-full">JavaScript</span>
+                            <span class="bg-purple-900/50 text-purple-300 text-xs font-semibold px-2.5 py-1 rounded-full">Bootstrap</span>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <a href="https://ekagrah.netlify.app/" target="_blank" class="text-purple-400 hover:text-purple-300 font-semibold flex items-center gap-2">
+                                <i data-lucide="external-link" class="w-4 h-4"></i> Live Demo
+                            </a>
+                            <a href="https://github.com/RupeshVerma28/NeuroFocus" class="text-slate-400 hover:text-slate-300 font-semibold flex items-center gap-2">
+                                <i data-lucide="github" class="w-4 h-4"></i> Source Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Card: Multitool -->
+                <div class="card rounded-xl overflow-hidden">
+                    <img src="Images/multitool.png" 
+                         onerror="this.onerror=null;this.src='https://placehold.co/600x400/171717/14b8a6?text=Project+Image';"
+                         alt="Multitool Project" class="w-full h-auto object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-slate-100 mb-2">ToolNexus</h3>
+                        <p class="text-slate-400 mb-4">A collection of multiple productivity tools. Tech used: HTML, CSS, JS, Bootstrap.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-teal-900/50 text-teal-300 text-xs font-semibold px-2.5 py-1 rounded-full">HTML</span>
+                            <span class="bg-teal-900/50 text-teal-300 text-xs font-semibold px-2.5 py-1 rounded-full">CSS</span>
+                            <span class="bg-teal-900/50 text-teal-300 text-xs font-semibold px-2.5 py-1 rounded-full">JavaScript</span>
+                            <span class="bg-teal-900/50 text-teal-300 text-xs font-semibold px-2.5 py-1 rounded-full">Bootstrap</span>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <a href="https://toolnexus.netlify.app/" target="_blank" class="text-teal-400 hover:text-teal-300 font-semibold flex items-center gap-2">
+                                <i data-lucide="external-link" class="w-4 h-4"></i> Live Demo
+                            </a>
+                            <a href="https://github.com/RupeshVerma28/ToolNexus" class="text-slate-400 hover:text-slate-300 font-semibold flex items-center gap-2">
+                                <i data-lucide="github" class="w-4 h-4"></i> Source Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Card: ScanReady-CV -->
+                <div class="card rounded-xl overflow-hidden">
+                    <img src="Images/pro3.png" 
+                         onerror="this.onerror=null;this.src='https://placehold.co/600x400/171717/38bdf8?text=Project+Image';"
+                         alt="ScanReady-CV Project" class="w-full h-auto object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-slate-100 mb-2">ScanReady-CV</h3>
+                        <p class="text-slate-400 mb-4">An ATS-friendly CV builder with pre-filled data and downloadable PDF functionality.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-sky-900/50 text-sky-300 text-xs font-semibold px-2.5 py-1 rounded-full">React</span>
+                            <span class="bg-sky-900/50 text-sky-300 text-xs font-semibold px-2.5 py-1 rounded-full">Tailwind CSS</span>
+                            <span class="bg-sky-900/50 text-sky-300 text-xs font-semibold px-2.5 py-1 rounded-full">Node.js</span>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <a href="https://scanready-cv.netlify.app/" target="_blank" class="text-sky-400 hover:text-sky-300 font-semibold flex items-center gap-2">
+                                <i data-lucide="external-link" class="w-4 h-4"></i> Live Demo
+                            </a>
+                            <a href="https://github.com/RupeshVerma28/ScanReady-CV---Major-Project" class="text-slate-400 hover:text-slate-300 font-semibold flex items-center gap-2">
+                                <i data-lucide="github" class="w-4 h-4"></i> Source Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Card: IncomeExpense-Watch -->
+                <div class="card rounded-xl overflow-hidden">
+                    <img src="Images/IET.png" 
+                         onerror="this.onerror=null;this.src='https://placehold.co/600x400/171717/818cf8?text=Project+Image';"
+                         alt="IncomeExpense-Watch Project" class="w-full h-auto object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-slate-100 mb-2">IncomeExpense-Watch</h3>
+                        <p class="text-slate-400 mb-4">Track your income and expenses with graphical representation and printable receipts.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-indigo-900/50 text-indigo-300 text-xs font-semibold px-2.5 py-1 rounded-full">JavaScript</span>
+                            <span class="bg-indigo-900/50 text-indigo-300 text-xs font-semibold px-2.5 py-1 rounded-full">Chart.js</span>
+                            <span class="bg-indigo-900/50 text-indigo-300 text-xs font-semibold px-2.5 py-1 rounded-full">HTML/CSS</span>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <a href="https://incomexpense-watch.netlify.app/" target="_blank" class="text-indigo-400 hover:text-indigo-300 font-semibold flex items-center gap-2">
+                                <i data-lucide="external-link" class="w-4 h-4"></i> Live Demo
+                            </a>
+                            <a href="#" class="text-slate-400 hover:text-slate-300 font-semibold flex items-center gap-2">
+                                <i data-lucide="github" class="w-4 h-4"></i> Source Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-12">
+                <a href="projects.html" class="bg-neutral-800 text-slate-200 font-semibold px-8 py-3 rounded-lg hover:bg-neutral-700 transition-all duration-300">
+                    See All Projects
+                </a>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="container mx-auto px-4 py-16 md:py-24">
+            <div class="max-w-3xl mx-auto">
+                 <h2 class="text-3xl md:text-4xl font-bold text-center mb-4"><span class="gradient-text">Let's Build Something Amazing</span></h2>
+                <p class="text-slate-400 mb-8 text-center">
+                    Have a project in mind or just want to say hello? My inbox is always open.
+                </p>
+                <div class="card p-8 rounded-xl">
+                    <form id="contact-form" action="https://formsubmit.co/errupesh28@gmail.com" method="POST">
+                        <!-- FormSubmit Hidden Inputs -->
+                        <input type="hidden" name="_captcha" value="false">
+                        
+                        <div class="space-y-6">
+                            <div>
+                                <label for="name" class="block text-sm font-medium text-slate-300 mb-2">Full Name</label>
+                                <input type="text" id="name" name="name" required class="form-input">
+                            </div>
+                            <div>
+                                <label for="email" class="block text-sm font-medium text-slate-300 mb-2">Email Address</label>
+                                <input type="email" id="email" name="email" required class="form-input">
+                            </div>
+                            <div>
+                                <label for="message" class="block text-sm font-medium text-slate-300 mb-2">Message</label>
+                                <textarea id="message" name="message" rows="4" required class="form-input"></textarea>
+                            </div>
+                            <div>
+                                <button type="submit" class="w-full bg-sky-500 text-white font-semibold px-8 py-3 rounded-lg hover:bg-sky-600 transition-all duration-300 flex items-center justify-center gap-2">
+                                    <span>Send Message</span>
+                                    <i data-lucide="send" class="w-4 h-4"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="form-success-message" class="hidden mt-6 text-center text-green-400 border border-green-400/50 bg-green-900/20 p-4 rounded-lg">
+                        form is submitted Successfully
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-neutral-800">
+        <div class="container mx-auto px-4 py-8">
+            <div class="flex flex-col md:flex-row justify-between items-center text-center md:text-left">
+                <p class="text-slate-400 mb-4 md:mb-0">&copy; 2025 Rupesh Verma. All rights reserved.</p>
+                <div class="flex items-center space-x-6">
+                    <a href="#" class="text-slate-400 hover:text-sky-400 transition-colors">
+                        <i data-lucide="youtube" class="w-6 h-6"></i>
+                    </a>
+                    <a href="#" class="text-slate-400 hover:text-sky-400 transition-colors">
+                        <i data-lucide="instagram" class="w-6 h-6"></i>
+                    </a>
+                    <a href="#" class="text-slate-400 hover:text-sky-400 transition-colors">
+                        <i data-lucide="linkedin" class="w-6 h-6"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // "See More" button functionality
+        function setupSeeMore(buttonId, listId, itemClass) {
+            const button = document.getElementById(buttonId);
+            const container = document.getElementById(listId);
+            if (!button || !container) return;
+
+            const hiddenItems = container.querySelectorAll(itemClass);
+            if (hiddenItems.length === 0) {
+                button.style.display = 'none';
+                return;
+            }
+
+            button.addEventListener('click', () => {
+                const isHidden = Array.from(hiddenItems).some(item => item.classList.contains('hidden'));
+                
+                hiddenItems.forEach(item => {
+                    item.classList.toggle('hidden');
+                });
+
+                button.textContent = isHidden ? 'See Less' : 'See More';
+            });
+        }
+
+        setupSeeMore('see-more-certs', 'certifications-list', 'li.hidden');
+        setupSeeMore('see-more-achievements', 'achievements-list', 'li.hidden');
+        
+        // Contact Form submission handling
+        const contactForm = document.getElementById('contact-form');
+        const successMessage = document.getElementById('form-success-message');
+
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const formData = new FormData(this);
+            
+            fetch(this.action, {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            }).then(response => {
+                if (response.ok) {
+                    successMessage.classList.remove('hidden');
+                    contactForm.reset();
+                    setTimeout(() => {
+                        successMessage.classList.add('hidden');
+                    }, 5000);
+                } else {
+                    // Handle errors if the submission fails
+                    response.json().then(data => {
+                        if (Object.hasOwn(data, 'errors')) {
+                            alert(data["errors"].map(error => error["message"]).join(", "));
+                        } else {
+                            alert('Oops! There was a problem submitting your form');
+                        }
+                    })
+                }
+            }).catch(error => {
+                 alert('Oops! There was a problem submitting your form');
+            });
+        });
+
+
+        // Simple fade-in animation on scroll
+        const animatedElements = document.querySelectorAll('.card, section h1, section h2, section p, section div.grid > div');
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+
+        animatedElements.forEach(el => {
+            el.style.opacity = '0';
+            el.style.transition = 'opacity 0.7s ease-out, transform 0.7s ease-out';
+            el.style.transform = 'translateY(20px)';
+            observer.observe(el);
+        });
+        
+        // Add fade-in style dynamically
+        const style = document.createElement('style');
+        style.innerHTML = `
+            .fade-in {
+                opacity: 1 !important;
+                transform: translateY(0) !important;
+            }
+        `;
+        document.head.appendChild(style);
+
+        // Typing effect for hero section
+        function setupTypingEffect() {
+            const typingTextElement = document.getElementById('typing-text');
+            const typingCursorElement = document.getElementById('typing-cursor');
+            if (!typingTextElement || !typingCursorElement) return;
+
+            // Dynamically set cursor height based on h1 font size
+            const h1Element = typingTextElement.closest('h1');
+            if (h1Element) {
+                const fontSize = window.getComputedStyle(h1Element).fontSize;
+                typingCursorElement.style.height = `calc(${fontSize} * 0.9)`;
+            }
+
+            const words = ["Full Stack Developer", "UI/UX Designer"];
+            let wordIndex = 0;
+            let charIndex = 0;
+            let isDeleting = false;
+
+            function type() {
+                const currentWord = words[wordIndex];
+                
+                const displayedText = isDeleting 
+                    ? currentWord.substring(0, charIndex--)
+                    : currentWord.substring(0, charIndex++);
+                
+                typingTextElement.textContent = displayedText;
+
+                let typeSpeed = isDeleting ? 75 : 150;
+
+                if (!isDeleting && displayedText === currentWord) {
+                    typeSpeed = 2000; // Pause after typing word
+                    isDeleting = true;
+                } else if (isDeleting && displayedText === '') {
+                    isDeleting = false;
+                    wordIndex = (wordIndex + 1) % words.length;
+                    typeSpeed = 500; // Pause before typing next word
+                }
+
+                setTimeout(type, typeSpeed);
+            }
+            
+            type();
+        }
+
+        setupTypingEffect();
+
+    </script>
+</body>
+
+</html>
+
+
+
+
+
+
