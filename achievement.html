@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Achievements | Rupesh Verma</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0A0A0A;
+            color: #E2E8F0; /* slate-200 */
+            overflow-x: hidden; /* Prevent horizontal scrollbar from confetti */
+        }
+
+        /* Custom gradient text */
+        .gradient-text {
+            background: linear-gradient(to right, #38bdf8, #818cf8); /* sky-400 to indigo-400 */
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Custom card styling */
+        .card {
+            background-color: rgba(23, 23, 23, 0.6); /* neutral-900 with opacity */
+            border: 1px solid #262626; /* neutral-800 */
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+            border-color: #404040; /* neutral-700 */
+        }
+        
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0A0A0A;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #262626;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #404040;
+        }
+
+        /* Confetti styles */
+        .confetti {
+            position: fixed;
+            width: 10px;
+            height: 20px;
+            background-color: #f00;
+            opacity: 0.7;
+            animation: fall 3s linear forwards;
+            top: -20px; /* Start above the screen */
+            z-index: 100;
+        }
+
+        @keyframes fall {
+            to {
+                transform: translateY(100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+
+<body class="antialiased">
+
+    <!-- Header -->
+    <header class="sticky top-0 z-50 bg-black/50 backdrop-blur-sm border-b border-neutral-800">
+        <div class="container mx-auto px-4">
+            <nav class="flex justify-between items-center py-4">
+                <a href="index.html" class="text-xl font-bold gradient-text">Rupesh Verma</a>
+                <a href="index.html" class="text-slate-300 hover:text-sky-400 transition-colors duration-300 flex items-center gap-2">
+                    <i data-lucide="arrow-left" class="w-4 h-4"></i>
+                    Back to Home
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Achievements Section -->
+        <section id="achievements" class="container mx-auto px-4 py-16 md:py-24">
+            <div class="text-center">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4"><span class="gradient-text">My Achievements</span></h2>
+                <p class="max-w-2xl mx-auto text-lg text-slate-400 mb-12">
+                    A collection of my accomplishments and milestones.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Achievement Card 1 -->
+                <div class="card rounded-xl overflow-hidden flex flex-col">
+                    <img src="https://placehold.co/600x400/171717/9333ea?text=Hackathon+Winner" 
+                         onerror="this.onerror=null;this.src='https://placehold.co/600x400/171717/9333ea?text=Achievement';"
+                         alt="Hackathon Winner" class="w-full h-48 object-cover">
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h3 class="text-xl font-bold text-slate-100 mb-2">Hackathon Winner 2023</h3>
+                        <p class="text-slate-400">
+                            Awarded first place for developing an innovative solution at a national level hackathon.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Achievement Card 2 -->
+                <div class="card rounded-xl overflow-hidden flex flex-col">
+                    <img src="https://placehold.co/600x400/171717/16a34a?text=Top+Contributor" 
+                         onerror="this.onerror=null;this.src='https://placehold.co/600x400/171717/16a34a?text=Achievement';"
+                         alt="Top Contributor Badge" class="w-full h-48 object-cover">
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h3 class="text-xl font-bold text-slate-100 mb-2">Top Open-Source Contributor</h3>
+                        <p class="text-slate-400">
+                            Recognized for significant contributions to major open-source projects.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Achievement Card 3 -->
+                <div class="card rounded-xl overflow-hidden flex flex-col">
+                    <img src="Images/LC100.png" 
+                         onerror="this.onerror=null;this.src='https://placehold.co/600x400/171717/ca8a04?text=Achievement';"
+                         alt="DSA Challenge Badge" class="w-full h-48 object-cover">
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h3 class="text-xl font-bold text-slate-100 mb-2">100 Days of DSA Challenge</h3>
+                        <p class="text-slate-400">
+                            Completed Leetcode's 100 Days of DSA Challenge, enhancing my problem-solving skills.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Celebrate Button -->
+            <div class="mt-16 text-center">
+                <button id="celebrateBtn" class="bg-sky-500 text-white font-semibold px-8 py-3 rounded-lg hover:bg-sky-600 transition-all duration-300 transform hover:scale-105">
+                    Celebrate With Me
+                </button>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-neutral-800">
+        <div class="container mx-auto px-4 py-8">
+            <div class="flex flex-col md:flex-row justify-between items-center text-center md:text-left">
+                <p class="text-slate-400 mb-4 md:mb-0">&copy; 2025 Rupesh Verma. All rights reserved.</p>
+                <div class="flex items-center space-x-6">
+                    <a href="#" class="text-slate-400 hover:text-sky-400 transition-colors">
+                        <i data-lucide="youtube" class="w-6 h-6"></i>
+                    </a>
+                    <a href="#" class="text-slate-400 hover:text-sky-400 transition-colors">
+                        <i data-lucide="instagram" class="w-6 h-6"></i>
+                    </a>
+                    <a href="#" class="text-slate-400 hover:text-sky-400 transition-colors">
+                        <i data-lucide="linkedin" class="w-6 h-6"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+
+        const celebrateBtn = document.getElementById('celebrateBtn');
+
+        celebrateBtn.addEventListener('click', () => {
+            // Disable the button to prevent multiple clicks
+            celebrateBtn.disabled = true;
+
+            // Trigger the confetti animation
+            for (let i = 0; i < 100; i++) {
+                createConfetti();
+            }
+
+            // Change the button text after the animation
+            setTimeout(() => {
+                celebrateBtn.classList.add('bg-green-500', 'hover:bg-green-600');
+                celebrateBtn.classList.remove('bg-sky-500', 'hover:bg-sky-600');
+                celebrateBtn.innerText = 'Thank You! 🎉';
+            }, 1000); // 1 second delay
+        });
+
+        function createConfetti() {
+            const confetti = document.createElement('div');
+            confetti.classList.add('confetti');
+            
+            // Randomize properties
+            const colors = ['#a855f7', '#ec4899', '#22c55e', '#3b82f6', '#f97316'];
+            confetti.style.left = Math.random() * 100 + 'vw';
+            confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+            confetti.style.animationDuration = Math.random() * 2 + 3 + 's'; // Between 3s and 5s
+            confetti.style.opacity = Math.random();
+            confetti.style.transform = `rotate(${Math.random() * 360}deg)`;
+
+            document.body.appendChild(confetti);
+
+            // Remove confetti element from DOM after it falls
+            setTimeout(() => {
+                confetti.remove();
+            }, 5000);
+        }
+    </script>
+</body>
+</html>
