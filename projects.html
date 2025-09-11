@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Projects | Rupesh Verma</title>
@@ -10,425 +9,811 @@
     <script src="https://cdn.tailwindcss.com"></script>
 
     <!-- Google Fonts: Inter -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
 
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
 
     <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #0A0A0A;
-            color: #E2E8F0; /* slate-200 */
-        }
+      body {
+        font-family: "Inter", sans-serif;
+        background-color: #0a0a0a;
+        color: #e2e8f0; /* slate-200 */
+      }
 
-        /* Custom gradient text */
-        .gradient-text {
-            background: linear-gradient(to right, #38bdf8, #818cf8); /* sky-400 to indigo-400 */
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
+      /* Custom gradient text */
+      .gradient-text {
+        background: linear-gradient(
+          to right,
+          #38bdf8,
+          #818cf8
+        ); /* sky-400 to indigo-400 */
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
 
-        /* Custom card styling */
-        .card {
-            background-color: rgba(23, 23, 23, 0.6); /* neutral-900 with opacity */
-            border: 1px solid #262626; /* neutral-800 */
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
+      /* Custom card styling */
+      .card {
+        background-color: rgba(23, 23, 23, 0.6); /* neutral-900 with opacity */
+        border: 1px solid #262626; /* neutral-800 */
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
 
-        .card:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
-            border-color: #404040; /* neutral-700 */
-        }
-        
-        /* Custom scrollbar */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #0A0A0A;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #262626;
-            border-radius: 10px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #404040;
-        }
+      .card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+        border-color: #404040; /* neutral-700 */
+      }
+
+      /* Custom scrollbar */
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #0a0a0a;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #262626;
+        border-radius: 10px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #404040;
+      }
     </style>
-</head>
+  </head>
 
-<body class="antialiased">
-
+  <body class="antialiased">
     <!-- Header -->
-    <header class="sticky top-0 z-50 bg-black/50 backdrop-blur-sm border-b border-neutral-800">
-        <div class="container mx-auto px-4">
-            <nav class="flex justify-between items-center py-4">
-                <a href="index.html" class="text-xl font-bold gradient-text">Rupesh Verma</a>
-                <a href="index.html" class="text-slate-300 hover:text-sky-400 transition-colors duration-300 flex items-center gap-2">
-                    <i data-lucide="arrow-left" class="w-4 h-4"></i>
-                    Back to Home
-                </a>
-            </nav>
-        </div>
+    <header
+      class="sticky top-0 z-50 bg-black/50 backdrop-blur-sm border-b border-neutral-800"
+    >
+      <div class="container mx-auto px-4">
+        <nav class="flex justify-between items-center py-4">
+          <a href="index.html" class="text-xl font-bold gradient-text"
+            >Rupesh Verma</a
+          >
+          <a
+            href="index.html"
+            class="text-slate-300 hover:text-sky-400 transition-colors duration-300 flex items-center gap-2"
+          >
+            <i data-lucide="arrow-left" class="w-4 h-4"></i>
+            Back to Home
+          </a>
+        </nav>
+      </div>
     </header>
 
     <main>
-        <!-- Work Section -->
-        <section id="work" class="container mx-auto px-4 py-16 md:py-24">
-            <div class="text-center">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4"><span class="gradient-text">All Projects</span></h2>
-                <p class="max-w-2xl mx-auto text-lg text-slate-400 mb-12">
-                    A collection of my work, showcasing my skills in development, design, and more.
-                </p>
+      <!-- Work Section -->
+      <section id="work" class="container mx-auto px-4 py-16 md:py-24">
+        <div class="text-center">
+          <h2 class="text-3xl md:text-4xl font-bold mb-4">
+            <span class="gradient-text">All Projects</span>
+          </h2>
+          <p class="max-w-2xl mx-auto text-lg text-slate-400 mb-12">
+            A collection of my work, showcasing my skills in development,
+            design, and more.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Project Card: NeuroFocus -->
+          <div class="card rounded-xl overflow-hidden">
+            <img
+              src="Images/neurofocus.png"
+              onerror="this.onerror=null;this.src='https://placehold.co/600x400/171717/a855f7?text=Project+Image';"
+              alt="NeuroFocus Project"
+              class="w-full h-auto object-cover"
+            />
+            <div class="p-6">
+              <h3 class="text-xl font-bold text-slate-100 mb-2">NeuroFocus</h3>
+              <p class="text-slate-400 mb-4">
+                A productivity dashboard created using HTML, Tailwind CSS, JS,
+                and Bootstrap.
+              </p>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span
+                  class="bg-purple-900/50 text-purple-300 text-xs font-semibold px-2.5 py-1 rounded-full"
+                  >HTML</span
+                >
+                <span
+                  class="bg-purple-900/50 text-purple-300 text-xs font-semibold px-2.5 py-1 rounded-full"
+                  >Tailwind CSS</span
+                >
+                <span
+                  class="bg-purple-900/50 text-purple-300 text-xs font-semibold px-2.5 py-1 rounded-full"
+                  >JavaScript</span
+                >
+              </div>
+              <div class="flex items-center gap-4 mt-auto">
+                <a
+                  href="https://neurofocuss.netlify.app/"
+                  target="_blank"
+                  class="text-purple-400 hover:text-purple-300 font-semibold flex items-center gap-2"
+                >
+                  <i data-lucide="external-link" class="w-4 h-4"></i> Live Demo
+                </a>
+                <a
+                  href="https://github.com/RupeshVerma28/NeuroFocus.git"
+                  class="text-slate-400 hover:text-slate-300 font-semibold flex items-center gap-2"
+                >
+                  <i data-lucide="github" class="w-4 h-4"></i> Source Code
+                </a>
+              </div>
             </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                
-                <!-- Project Card: NeuroFocus -->
-                <div class="card rounded-xl overflow-hidden">
-                    <img src="Images/neurofocus.png" 
-                         onerror="this.onerror=null;this.src='https://placehold.co/600x400/171717/a855f7?text=Project+Image';"
-                         alt="NeuroFocus Project" class="w-full h-auto object-cover">
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-slate-100 mb-2">NeuroFocus</h3>
-                        <p class="text-slate-400 mb-4">A productivity dashboard created using HTML, Tailwind CSS, JS, and Bootstrap.</p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="bg-purple-900/50 text-purple-300 text-xs font-semibold px-2.5 py-1 rounded-full">HTML</span>
-                            <span class="bg-purple-900/50 text-purple-300 text-xs font-semibold px-2.5 py-1 rounded-full">Tailwind CSS</span>
-                            <span class="bg-purple-900/50 text-purple-300 text-xs font-semibold px-2.5 py-1 rounded-full">JavaScript</span>
-                        </div>
-                        <div class="flex items-center gap-4 mt-auto">
-                            <a href="https://neurofocuss.netlify.app/" target="_blank" class="text-purple-400 hover:text-purple-300 font-semibold flex items-center gap-2">
-                                <i data-lucide="external-link" class="w-4 h-4"></i> Live Demo
-                            </a>
-                            <a href="https://github.com/RupeshVerma28/NeuroFocus.git" class="text-slate-400 hover:text-slate-300 font-semibold flex items-center gap-2">
-                                <i data-lucide="github" class="w-4 h-4"></i> Source Code
-                            </a>
-                        </div>
-                    </div>
-                </div>
+          </div>
 
-                <!-- Project Card: Multitool -->
-                <div class="card rounded-xl overflow-hidden">
-                    <img src="Images/multitool.png" 
-                         onerror="this.onerror=null;this.src='https://placehold.co/600x400/171717/14b8a6?text=Project+Image';"
-                         alt="Multitool Project" class="w-full h-auto object-cover">
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-slate-100 mb-2">Multitool</h3>
-                        <p class="text-slate-400 mb-4">A collection of multiple productivity tools. Tech used: HTML, CSS, JS, Bootstrap.</p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="bg-teal-900/50 text-teal-300 text-xs font-semibold px-2.5 py-1 rounded-full">HTML</span>
-                            <span class="bg-teal-900/50 text-teal-300 text-xs font-semibold px-2.5 py-1 rounded-full">CSS</span>
-                            <span class="bg-teal-900/50 text-teal-300 text-xs font-semibold px-2.5 py-1 rounded-full">JavaScript</span>
-                        </div>
-                        <div class="flex items-center gap-4 mt-auto">
-                            <a href="#" target="_blank" class="text-teal-400 hover:text-teal-300 font-semibold flex items-center gap-2">
-                                <i data-lucide="external-link" class="w-4 h-4"></i> Live Demo
-                            </a>
-                            <a href="#" class="text-slate-400 hover:text-slate-300 font-semibold flex items-center gap-2">
-                                <i data-lucide="github" class="w-4 h-4"></i> Source Code
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project Card: ScanReady-CV -->
-                <div class="card rounded-xl overflow-hidden">
-                    <img src="Images/pro3.png" 
-                         onerror="this.onerror=null;this.src='https://placehold.co/600x400/171717/38bdf8?text=Project+Image';"
-                         alt="ScanReady-CV Project" class="w-full h-auto object-cover">
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-slate-100 mb-2">ScanReady-CV</h3>
-                        <p class="text-slate-400 mb-4">An ATS-friendly CV builder with pre-filled data and downloadable PDF functionality.</p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="bg-sky-900/50 text-sky-300 text-xs font-semibold px-2.5 py-1 rounded-full">React</span>
-                            <span class="bg-sky-900/50 text-sky-300 text-xs font-semibold px-2.5 py-1 rounded-full">Tailwind CSS</span>
-                            <span class="bg-sky-900/50 text-sky-300 text-xs font-semibold px-2.5 py-1 rounded-full">html 2 pdf</span>
-                        </div>
-                        <div class="flex items-center gap-4 mt-auto">
-                            <a href="https://scanready-cv.netlify.app/" target="_blank" class="text-sky-400 hover:text-sky-300 font-semibold flex items-center gap-2">
-                                <i data-lucide="external-link" class="w-4 h-4"></i> Live Demo
-                            </a>
-                            <a href="#" class="text-slate-400 hover:text-slate-300 font-semibold flex items-center gap-2">
-                                <i data-lucide="github" class="w-4 h-4"></i> Source Code
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project Card: IncomeExpense-Watch -->
-                <div class="card rounded-xl overflow-hidden">
-                    <img src="Images/IET.png" 
-                         onerror="this.onerror=null;this.src='https://placehold.co/600x400/171717/818cf8?text=Project+Image';"
-                         alt="IncomeExpense-Watch Project" class="w-full h-auto object-cover">
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-slate-100 mb-2">IncomeExpense-Watch</h3>
-                        <p class="text-slate-400 mb-4">Track your income and expenses with graphical representation and printable receipts.</p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="bg-indigo-900/50 text-indigo-300 text-xs font-semibold px-2.5 py-1 rounded-full">React</span>
-                            <span class="bg-indigo-900/50 text-indigo-300 text-xs font-semibold px-2.5 py-1 rounded-full">Chart.js</span>
-                            <span class="bg-indigo-900/50 text-indigo-300 text-xs font-semibold px-2.5 py-1 rounded-full">Tailwind CSS</span>
-                        </div>
-                        <div class="flex items-center gap-4 mt-auto">
-                            <a href="https://incomexpense-watch.netlify.app/" target="_blank" class="text-indigo-400 hover:text-indigo-300 font-semibold flex items-center gap-2">
-                                <i data-lucide="external-link" class="w-4 h-4"></i> Live Demo
-                            </a>
-                            <a href="#" class="text-slate-400 hover:text-slate-300 font-semibold flex items-center gap-2">
-                                <i data-lucide="github" class="w-4 h-4"></i> Source Code
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project Card: Travel -->
-                <div class="card rounded-xl overflow-hidden">
-                    <img src="Images/snapinvoice.png" 
-                         onerror="this.onerror=null;this.src='https://placehold.co/600x400/171717/34d399?text=Project+Image';"
-                         alt="Travel Project" class="w-full h-auto object-cover">
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-slate-100 mb-2">snapinvoice</h3>
-                        <p class="text-slate-400 mb-4">A Quick Professional Invoice Generator With GST calculator .</p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="bg-emerald-900/50 text-emerald-300 text-xs font-semibold px-2.5 py-1 rounded-full">React</span>
-                            <span class="bg-emerald-900/50 text-emerald-300 text-xs font-semibold px-2.5 py-1 rounded-full">Tailwind CSS</span>
-                            <span class="bg-emerald-900/50 text-emerald-300 text-xs font-semibold px-2.5 py-1 rounded-full">html 2 pdf</span>
-                        </div>
-                        <div class="flex items-center gap-4 mt-auto">
-                            <a href="#" target="_blank" class="text-emerald-400 hover:text-emerald-300 font-semibold flex items-center gap-2">
-                                <i data-lucide="external-link" class="w-4 h-4"></i> Live Demo
-                            </a>
-                            <a href="#" class="text-slate-400 hover:text-slate-300 font-semibold flex items-center gap-2">
-                                <i data-lucide="github" class="w-4 h-4"></i> Source Code
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project Card: SkillAudify -->
-                <div class="card rounded-xl overflow-hidden">
-                    <img src="Images/skillaudify.png" 
-                         onerror="this.onerror=null;this.src='https://placehold.co/600x400/171717/f59e0b?text=Project+Image';"
-                         alt="SkillAudify Project" class="w-full h-auto object-cover">
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-slate-100 mb-2">SkillAudify</h3>
-                        <p class="text-slate-400 mb-4">Audio-based learning platform designed using HTML, CSS, and JavaScript.</p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                           <span class="bg-amber-900/50 text-amber-300 text-xs font-semibold px-2.5 py-1 rounded-full">React</span>
-                            <span class="bg-amber-900/50 text-amber-300 text-xs font-semibold px-2.5 py-1 rounded-full">Tailwind CSS</span>
-                        </div>
-                        <div class="flex items-center gap-4 mt-auto">
-                            <a href="#" target="_blank" class="text-amber-400 hover:text-amber-300 font-semibold flex items-center gap-2">
-                                <i data-lucide="external-link" class="w-4 h-4"></i> Live Demo
-                            </a>
-                            <a href="#" class="text-slate-400 hover:text-slate-300 font-semibold flex items-center gap-2">
-                                <i data-lucide="github" class="w-4 h-4"></i> Source Code
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                            <div class="card rounded-xl overflow-hidden">
-                    <img src="Images/V-card.png" 
-                         onerror="this.onerror=null;this.src='https://placehold.co/600x400/171717/34d399?text=Project+Image';"
-                         alt="Travel Project" class="w-full h-auto object-cover">
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-slate-100 mb-2">V-Card</h3>
-                        <p class="text-slate-400 mb-4">An Digital Version Of the Business Card .</p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="bg-emerald-900/50 text-emerald-300 text-xs font-semibold px-2.5 py-1 rounded-full">HTML</span>
-                            <span class="bg-emerald-900/50 text-emerald-300 text-xs font-semibold px-2.5 py-1 rounded-full">CSS</span>
-                            <span class="bg-emerald-900/50 text-emerald-300 text-xs font-semibold px-2.5 py-1 rounded-full">JavaScript</span>
-                            <span class="bg-emerald-900/50 text-emerald-300 text-xs font-semibold px-2.5 py-1 rounded-full">Bootstrap</span>
-                        </div>
-                        <div class="flex items-center gap-4 mt-auto">
-                            <a href="https://vcard-rupeshverma.netlify.app/" target="_blank" class="text-emerald-400 hover:text-emerald-300 font-semibold flex items-center gap-2">
-                                <i data-lucide="external-link" class="w-4 h-4"></i> Live Demo
-                            </a>
-                            <a href="#" class="text-slate-400 hover:text-slate-300 font-semibold flex items-center gap-2">
-                                <i data-lucide="github" class="w-4 h-4"></i> Source Code
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                            <div class="card rounded-xl overflow-hidden">
-                    <img src="Images/phone info.png" 
-                         onerror="this.onerror=null;this.src='https://placehold.co/600x400/171717/34d399?text=Project+Image';"
-                         alt="Travel Project" class="w-full h-auto object-cover">
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-slate-100 mb-2">PhoneINFO Gather</h3>
-                        <p class="text-slate-400 mb-4">Phone number Information Gathering Tool;.</p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="bg-emerald-900/50 text-emerald-300 text-xs font-semibold px-2.5 py-1 rounded-full">Python</span>
-                            <span class="bg-emerald-900/50 text-emerald-300 text-xs font-semibold px-2.5 py-1 rounded-full">Tkinter</span>
-                        </div>
-                        <div class="flex items-center gap-4 mt-auto">
-                            <a href="#" class="text-slate-400 hover:text-slate-300 font-semibold flex items-center gap-2">
-                                <i data-lucide="github" class="w-4 h-4"></i> Source Code
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                            <div class="card rounded-xl overflow-hidden">
-                    <img src="Images/Filescanner.png" 
-                         onerror="this.onerror=null;this.src='https://placehold.co/600x400/171717/34d399?text=Project+Image';"
-                         alt="Travel Project" class="w-full h-auto object-cover">
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-slate-100 mb-2">File Scanner</h3>
-                        <p class="text-slate-400 mb-4">A File Scanner that check the file for the virus</p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="bg-emerald-900/50 text-emerald-300 text-xs font-semibold px-2.5 py-1 rounded-full">Python</span>
-                            <span class="bg-emerald-900/50 text-emerald-300 text-xs font-semibold px-2.5 py-1 rounded-full">customtkinter</span>
-                            <span class="bg-emerald-900/50 text-emerald-300 text-xs font-semibold px-2.5 py-1 rounded-full">eportlab.pdfgen</span>
-                            <span class="bg-emerald-900/50 text-emerald-300 text-xs font-semibold px-2.5 py-1 rounded-full">mimetypes</span>
-                        </div>
-                        <div class="flex items-center gap-4 mt-auto">
-                            <a href="#" class="text-slate-400 hover:text-slate-300 font-semibold flex items-center gap-2">
-                                <i data-lucide="github" class="w-4 h-4"></i> Source Code
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                            <div class="card rounded-xl overflow-hidden">
-                    <img src="Images/SSl Certi check.png" 
-                         onerror="this.onerror=null;this.src='https://placehold.co/600x400/171717/34d399?text=Project+Image';"
-                         alt="Travel Project" class="w-full h-auto object-cover">
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-slate-100 mb-2">SSL Certificate Checker </h3>
-                        <p class="text-slate-400 mb-4">An simple and Usefull website SSL Certificate Checker.</p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="bg-emerald-900/50 text-emerald-300 text-xs font-semibold px-2.5 py-1 rounded-full">HTML</span>
-                            <span class="bg-emerald-900/50 text-emerald-300 text-xs font-semibold px-2.5 py-1 rounded-full">CSS</span>
-                            <span class="bg-emerald-900/50 text-emerald-300 text-xs font-semibold px-2.5 py-1 rounded-full">JavaScript</span>
-                        </div>
-                        <div class="flex items-center gap-4 mt-auto">
-                            <a href="#" class="text-slate-400 hover:text-slate-300 font-semibold flex items-center gap-2">
-                                <i data-lucide="github" class="w-4 h-4"></i> Source Code
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                            <div class="card rounded-xl overflow-hidden">
-                    <img src="Images/GithubProfileViewer.png" 
-                         onerror="this.onerror=null;this.src='https://placehold.co/600x400/171717/34d399?text=Project+Image';"
-                         alt="Travel Project" class="w-full h-auto object-cover">
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-slate-100 mb-2">Github Github Profile Viewer</h3>
-                        <p class="text-slate-400 mb-4">An simple Github profile Viewer that provide information about user .</p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="bg-emerald-900/50 text-emerald-300 text-xs font-semibold px-2.5 py-1 rounded-full">HTML</span>
-                            <span class="bg-emerald-900/50 text-emerald-300 text-xs font-semibold px-2.5 py-1 rounded-full">CSS</span>
-                            <span class="bg-emerald-900/50 text-emerald-300 text-xs font-semibold px-2.5 py-1 rounded-full">JavaScript</span>
-                        </div>
-                        <div class="flex items-center gap-4 mt-auto">
-                            <a href="#" target="_blank" class="text-emerald-400 hover:text-emerald-300 font-semibold flex items-center gap-2">
-                                <i data-lucide="external-link" class="w-4 h-4"></i> Live Demo
-                            </a>
-                            <a href="#" class="text-slate-400 hover:text-slate-300 font-semibold flex items-center gap-2">
-                                <i data-lucide="github" class="w-4 h-4"></i> Source Code
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                            <div class="card rounded-xl overflow-hidden">
-                    <img src="Images/obj shape detector .png" 
-                         onerror="this.onerror=null;this.src='https://placehold.co/600x400/171717/34d399?text=Project+Image';"
-                         alt="Travel Project" class="w-full h-auto object-cover">
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-slate-100 mb-2">Object Shape detector</h3>
-                        <p class="text-slate-400 mb-4">An simple GUI Based Program That detect the object shape.</p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="bg-emerald-900/50 text-emerald-300 text-xs font-semibold px-2.5 py-1 rounded-full">Python</span>
-                            <span class="bg-emerald-900/50 text-emerald-300 text-xs font-semibold px-2.5 py-1 rounded-full">customtkinter</span>
-                            <span class="bg-emerald-900/50 text-emerald-300 text-xs font-semibold px-2.5 py-1 rounded-full">Numpy</span>
-                            <span class="bg-emerald-900/50 text-emerald-300 text-xs font-semibold px-2.5 py-1 rounded-full">OpenCV</span>
-                        </div>
-                        <div class="flex items-center gap-4 mt-auto">
-                            <a href="#" target="_blank" class="text-emerald-400 hover:text-emerald-300 font-semibold flex items-center gap-2">
-                                <i data-lucide="external-link" class="w-4 h-4"></i> Live Demo
-                            </a>
-                            <a href="#" class="text-slate-400 hover:text-slate-300 font-semibold flex items-center gap-2">
-                                <i data-lucide="github" class="w-4 h-4"></i> Source Code
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                            <div class="card rounded-xl overflow-hidden">
-                    <img src="Images/dis measure .png" 
-                         onerror="this.onerror=null;this.src='https://placehold.co/600x400/171717/34d399?text=Project+Image';"
-                         alt="Travel Project" class="w-full h-auto object-cover">
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-slate-100 mb-2">Object Distance measure</h3>
-                        <p class="text-slate-400 mb-4">A GUI Base Powerfull Program that Measure the Distance Between Two Object .</p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="bg-emerald-900/50 text-emerald-300 text-xs font-semibold px-2.5 py-1 rounded-full">Python</span>
-                            <span class="bg-emerald-900/50 text-emerald-300 text-xs font-semibold px-2.5 py-1 rounded-full">customtkinter</span>
-                            <span class="bg-emerald-900/50 text-emerald-300 text-xs font-semibold px-2.5 py-1 rounded-full">Numpy</span>
-                            <span class="bg-emerald-900/50 text-emerald-300 text-xs font-semibold px-2.5 py-1 rounded-full">OpenCV</span>
-                        </div>
-                        <div class="flex items-center gap-4 mt-auto">
-                            <a href="#" target="_blank" class="text-emerald-400 hover:text-emerald-300 font-semibold flex items-center gap-2">
-                                <i data-lucide="external-link" class="w-4 h-4"></i> Live Demo
-                            </a>
-                            <a href="#" class="text-slate-400 hover:text-slate-300 font-semibold flex items-center gap-2">
-                                <i data-lucide="github" class="w-4 h-4"></i> Source Code
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                            <div class="card rounded-xl overflow-hidden">
-                    <img src="Images/whatsaap massage sender .png" 
-                         onerror="this.onerror=null;this.src='https://placehold.co/600x400/171717/34d399?text=Project+Image';"
-                         alt="Travel Project" class="w-full h-auto object-cover">
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-slate-100 mb-2">Automatic massage Sender </h3>
-                        <p class="text-slate-400 mb-4">Send the Business Massages Automatically On the Sheduled Time .</p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="bg-emerald-900/50 text-emerald-300 text-xs font-semibold px-2.5 py-1 rounded-full">Python</span>
-                            <span class="bg-emerald-900/50 text-emerald-300 text-xs font-semibold px-2.5 py-1 rounded-full">customtkinter</span>
-                            <span class="bg-emerald-900/50 text-emerald-300 text-xs font-semibold px-2.5 py-1 rounded-full">pywhatkit</span>
-                        </div>
-                        <div class="flex items-center gap-4 mt-auto">
-                            <a href="#" target="_blank" class="text-emerald-400 hover:text-emerald-300 font-semibold flex items-center gap-2">
-                                <i data-lucide="external-link" class="w-4 h-4"></i> Live Demo
-                            </a>
-                            <a href="#" class="text-slate-400 hover:text-slate-300 font-semibold flex items-center gap-2">
-                                <i data-lucide="github" class="w-4 h-4"></i> Source Code
-                            </a>
-                        </div>
-                    </div>
-                </div>
+          <!-- Project Card: PinShelf -->
+          <div class="card rounded-xl overflow-hidden">
+            <img
+              src="Images/pinshelf.png"
+              onerror="this.onerror=null;this.src='https://placehold.co/600x400/171717/ec4899?text=Project+Image';"
+              alt="PinShelf Project"
+              class="w-full h-auto object-cover"
+            />
+            <div class="p-6">
+              <h3 class="text-xl font-bold text-slate-100 mb-2">PinShelf</h3>
+              <p class="text-slate-400 mb-4">
+                A smart link manager that manages your important links.
+              </p>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span
+                  class="bg-pink-900/50 text-pink-300 text-xs font-semibold px-2.5 py-1 rounded-full"
+                  >HTML</span
+                >
+                <span
+                  class="bg-pink-900/50 text-pink-300 text-xs font-semibold px-2.5 py-1 rounded-full"
+                  >Tailwind CSS</span
+                >
+                <span
+                  class="bg-pink-900/50 text-pink-300 text-xs font-semibold px-2.5 py-1 rounded-full"
+                  >JavaScript</span
+                >
+              </div>
+              <div class="flex items-center gap-4 mt-auto">
+                <a
+                  href="#"
+                  target="_blank"
+                  class="text-pink-400 hover:text-pink-300 font-semibold flex items-center gap-2"
+                >
+                  <i data-lucide="external-link" class="w-4 h-4"></i> Live Demo
+                </a>
+                <a
+                  href="#"
+                  class="text-slate-400 hover:text-slate-300 font-semibold flex items-center gap-2"
+                >
+                  <i data-lucide="github" class="w-4 h-4"></i> Source Code
+                </a>
+              </div>
             </div>
-        </section>
+          </div>
+
+          <!-- Project Card: Multitool -->
+          <div class="card rounded-xl overflow-hidden">
+            <img
+              src="Images/multitool.png"
+              onerror="this.onerror=null;this.src='https://placehold.co/600x400/171717/14b8a6?text=Project+Image';"
+              alt="Multitool Project"
+              class="w-full h-auto object-cover"
+            />
+            <div class="p-6">
+              <h3 class="text-xl font-bold text-slate-100 mb-2">Multitool</h3>
+              <p class="text-slate-400 mb-4">
+                A collection of multiple productivity tools. Tech used: HTML,
+                CSS, JS, Bootstrap.
+              </p>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span
+                  class="bg-teal-900/50 text-teal-300 text-xs font-semibold px-2.5 py-1 rounded-full"
+                  >HTML</span
+                >
+                <span
+                  class="bg-teal-900/50 text-teal-300 text-xs font-semibold px-2.5 py-1 rounded-full"
+                  >CSS</span
+                >
+                <span
+                  class="bg-teal-900/50 text-teal-300 text-xs font-semibold px-2.5 py-1 rounded-full"
+                  >JavaScript</span
+                >
+              </div>
+              <div class="flex items-center gap-4 mt-auto">
+                <a
+                  href="#"
+                  target="_blank"
+                  class="text-teal-400 hover:text-teal-300 font-semibold flex items-center gap-2"
+                >
+                  <i data-lucide="external-link" class="w-4 h-4"></i> Live Demo
+                </a>
+                <a
+                  href="#"
+                  class="text-slate-400 hover:text-slate-300 font-semibold flex items-center gap-2"
+                >
+                  <i data-lucide="github" class="w-4 h-4"></i> Source Code
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project Card: ScanReady-CV -->
+          <div class="card rounded-xl overflow-hidden">
+            <img
+              src="Images/pro3.png"
+              onerror="this.onerror=null;this.src='https://placehold.co/600x400/171717/38bdf8?text=Project+Image';"
+              alt="ScanReady-CV Project"
+              class="w-full h-auto object-cover"
+            />
+            <div class="p-6">
+              <h3 class="text-xl font-bold text-slate-100 mb-2">
+                ScanReady-CV
+              </h3>
+              <p class="text-slate-400 mb-4">
+                An ATS-friendly CV builder with pre-filled data and downloadable
+                PDF functionality.
+              </p>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span
+                  class="bg-sky-900/50 text-sky-300 text-xs font-semibold px-2.5 py-1 rounded-full"
+                  >React</span
+                >
+                <span
+                  class="bg-sky-900/50 text-sky-300 text-xs font-semibold px-2.5 py-1 rounded-full"
+                  >Tailwind CSS</span
+                >
+                <span
+                  class="bg-sky-900/50 text-sky-300 text-xs font-semibold px-2.5 py-1 rounded-full"
+                  >html 2 pdf</span
+                >
+              </div>
+              <div class="flex items-center gap-4 mt-auto">
+                <a
+                  href="https://scanready-cv.netlify.app/"
+                  target="_blank"
+                  class="text-sky-400 hover:text-sky-300 font-semibold flex items-center gap-2"
+                >
+                  <i data-lucide="external-link" class="w-4 h-4"></i> Live Demo
+                </a>
+                <a
+                  href="#"
+                  class="text-slate-400 hover:text-slate-300 font-semibold flex items-center gap-2"
+                >
+                  <i data-lucide="github" class="w-4 h-4"></i> Source Code
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project Card: IncomeExpense-Watch -->
+          <div class="card rounded-xl overflow-hidden">
+            <img
+              src="Images/IET.png"
+              onerror="this.onerror=null;this.src='https://placehold.co/600x400/171717/818cf8?text=Project+Image';"
+              alt="IncomeExpense-Watch Project"
+              class="w-full h-auto object-cover"
+            />
+            <div class="p-6">
+              <h3 class="text-xl font-bold text-slate-100 mb-2">
+                IncomeExpense-Watch
+              </h3>
+              <p class="text-slate-400 mb-4">
+                Track your income and expenses with graphical representation and
+                printable receipts.
+              </p>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span
+                  class="bg-indigo-900/50 text-indigo-300 text-xs font-semibold px-2.5 py-1 rounded-full"
+                  >React</span
+                >
+                <span
+                  class="bg-indigo-900/50 text-indigo-300 text-xs font-semibold px-2.5 py-1 rounded-full"
+                  >Chart.js</span
+                >
+                <span
+                  class="bg-indigo-900/50 text-indigo-300 text-xs font-semibold px-2.5 py-1 rounded-full"
+                  >Tailwind CSS</span
+                >
+              </div>
+              <div class="flex items-center gap-4 mt-auto">
+                <a
+                  href="https://incomexpense-watch.netlify.app/"
+                  target="_blank"
+                  class="text-indigo-400 hover:text-indigo-300 font-semibold flex items-center gap-2"
+                >
+                  <i data-lucide="external-link" class="w-4 h-4"></i> Live Demo
+                </a>
+                <a
+                  href="#"
+                  class="text-slate-400 hover:text-slate-300 font-semibold flex items-center gap-2"
+                >
+                  <i data-lucide="github" class="w-4 h-4"></i> Source Code
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project Card: Travel -->
+          <div class="card rounded-xl overflow-hidden">
+            <img
+              src="Images/snapinvoice.png"
+              onerror="this.onerror=null;this.src='https://placehold.co/600x400/171717/34d399?text=Project+Image';"
+              alt="Travel Project"
+              class="w-full h-auto object-cover"
+            />
+            <div class="p-6">
+              <h3 class="text-xl font-bold text-slate-100 mb-2">snapinvoice</h3>
+              <p class="text-slate-400 mb-4">
+                A Quick Professional Invoice Generator With GST calculator .
+              </p>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span
+                  class="bg-emerald-900/50 text-emerald-300 text-xs font-semibold px-2.5 py-1 rounded-full"
+                  >React</span
+                >
+                <span
+                  class="bg-emerald-900/50 text-emerald-300 text-xs font-semibold px-2.5 py-1 rounded-full"
+                  >Tailwind CSS</span
+                >
+                <span
+                  class="bg-emerald-900/50 text-emerald-300 text-xs font-semibold px-2.5 py-1 rounded-full"
+                  >html 2 pdf</span
+                >
+              </div>
+              <div class="flex items-center gap-4 mt-auto">
+                <a
+                  href="#"
+                  target="_blank"
+                  class="text-emerald-400 hover:text-emerald-300 font-semibold flex items-center gap-2"
+                >
+                  <i data-lucide="external-link" class="w-4 h-4"></i> Live Demo
+                </a>
+                <a
+                  href="#"
+                  class="text-slate-400 hover:text-slate-300 font-semibold flex items-center gap-2"
+                >
+                  <i data-lucide="github" class="w-4 h-4"></i> Source Code
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project Card: SkillAudify -->
+          <div class="card rounded-xl overflow-hidden">
+            <img
+              src="Images/skillaudify.png"
+              onerror="this.onerror=null;this.src='https://placehold.co/600x400/171717/f59e0b?text=Project+Image';"
+              alt="SkillAudify Project"
+              class="w-full h-auto object-cover"
+            />
+            <div class="p-6">
+              <h3 class="text-xl font-bold text-slate-100 mb-2">SkillAudify</h3>
+              <p class="text-slate-400 mb-4">
+                Audio-based learning platform designed using HTML, CSS, and
+                JavaScript.
+              </p>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span
+                  class="bg-amber-900/50 text-amber-300 text-xs font-semibold px-2.5 py-1 rounded-full"
+                  >React</span
+                >
+                <span
+                  class="bg-amber-900/50 text-amber-300 text-xs font-semibold px-2.5 py-1 rounded-full"
+                  >Tailwind CSS</span
+                >
+              </div>
+              <div class="flex items-center gap-4 mt-auto">
+                <a
+                  href="#"
+                  target="_blank"
+                  class="text-amber-400 hover:text-amber-300 font-semibold flex items-center gap-2"
+                >
+                  <i data-lucide="external-link" class="w-4 h-4"></i> Live Demo
+                </a>
+                <a
+                  href="#"
+                  class="text-slate-400 hover:text-slate-300 font-semibold flex items-center gap-2"
+                >
+                  <i data-lucide="github" class="w-4 h-4"></i> Source Code
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="card rounded-xl overflow-hidden">
+            <img
+              src="Images/V-card.png"
+              onerror="this.onerror=null;this.src='https://placehold.co/600x400/171717/34d399?text=Project+Image';"
+              alt="Travel Project"
+              class="w-full h-auto object-cover"
+            />
+            <div class="p-6">
+              <h3 class="text-xl font-bold text-slate-100 mb-2">V-Card</h3>
+              <p class="text-slate-400 mb-4">
+                An Digital Version Of the Business Card .
+              </p>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span
+                  class="bg-emerald-900/50 text-emerald-300 text-xs font-semibold px-2.5 py-1 rounded-full"
+                  >HTML</span
+                >
+                <span
+                  class="bg-emerald-900/50 text-emerald-300 text-xs font-semibold px-2.5 py-1 rounded-full"
+                  >CSS</span
+                >
+                <span
+                  class="bg-emerald-900/50 text-emerald-300 text-xs font-semibold px-2.5 py-1 rounded-full"
+                  >JavaScript</span
+                >
+                <span
+                  class="bg-emerald-900/50 text-emerald-300 text-xs font-semibold px-2.5 py-1 rounded-full"
+                  >Bootstrap</span
+                >
+              </div>
+              <div class="flex items-center gap-4 mt-auto">
+                <a
+                  href="https://vcard-rupeshverma.netlify.app/"
+                  target="_blank"
+                  class="text-emerald-400 hover:text-emerald-300 font-semibold flex items-center gap-2"
+                >
+                  <i data-lucide="external-link" class="w-4 h-4"></i> Live Demo
+                </a>
+                <a
+                  href="#"
+                  class="text-slate-400 hover:text-slate-300 font-semibold flex items-center gap-2"
+                >
+                  <i data-lucide="github" class="w-4 h-4"></i> Source Code
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="card rounded-xl overflow-hidden">
+            <img
+              src="Images/phone info.png"
+              onerror="this.onerror=null;this.src='https://placehold.co/600x400/171717/34d399?text=Project+Image';"
+              alt="Travel Project"
+              class="w-full h-auto object-cover"
+            />
+            <div class="p-6">
+              <h3 class="text-xl font-bold text-slate-100 mb-2">
+                PhoneINFO Gather
+              </h3>
+              <p class="text-slate-400 mb-4">
+                Phone number Information Gathering Tool;.
+              </p>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span
+                  class="bg-emerald-900/50 text-emerald-300 text-xs font-semibold px-2.5 py-1 rounded-full"
+                  >Python</span
+                >
+                <span
+                  class="bg-emerald-900/50 text-emerald-300 text-xs font-semibold px-2.5 py-1 rounded-full"
+                  >Tkinter</span
+                >
+              </div>
+              <div class="flex items-center gap-4 mt-auto">
+                <a
+                  href="#"
+                  class="text-slate-400 hover:text-slate-300 font-semibold flex items-center gap-2"
+                >
+                  <i data-lucide="github" class="w-4 h-4"></i> Source Code
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="card rounded-xl overflow-hidden">
+            <img
+              src="Images/Filescanner.png"
+              onerror="this.onerror=null;this.src='https://placehold.co/600x400/171717/34d399?text=Project+Image';"
+              alt="Travel Project"
+              class="w-full h-auto object-cover"
+            />
+            <div class="p-6">
+              <h3 class="text-xl font-bold text-slate-100 mb-2">
+                File Scanner
+              </h3>
+              <p class="text-slate-400 mb-4">
+                A File Scanner that check the file for the virus
+              </p>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span
+                  class="bg-emerald-900/50 text-emerald-300 text-xs font-semibold px-2.5 py-1 rounded-full"
+                  >Python</span
+                >
+                <span
+                  class="bg-emerald-900/50 text-emerald-300 text-xs font-semibold px-2.5 py-1 rounded-full"
+                  >customtkinter</span
+                >
+                <span
+                  class="bg-emerald-900/50 text-emerald-300 text-xs font-semibold px-2.5 py-1 rounded-full"
+                  >eportlab.pdfgen</span
+                >
+                <span
+                  class="bg-emerald-900/50 text-emerald-300 text-xs font-semibold px-2.5 py-1 rounded-full"
+                  >mimetypes</span
+                >
+              </div>
+              <div class="flex items-center gap-4 mt-auto">
+                <a
+                  href="#"
+                  class="text-slate-400 hover:text-slate-300 font-semibold flex items-center gap-2"
+                >
+                  <i data-lucide="github" class="w-4 h-4"></i> Source Code
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="card rounded-xl overflow-hidden">
+            <img
+              src="Images/SSl Certi check.png"
+              onerror="this.onerror=null;this.src='https://placehold.co/600x400/171717/34d399?text=Project+Image';"
+              alt="Travel Project"
+              class="w-full h-auto object-cover"
+            />
+            <div class="p-6">
+              <h3 class="text-xl font-bold text-slate-100 mb-2">
+                SSL Certificate Checker
+              </h3>
+              <p class="text-slate-400 mb-4">
+                An simple and Usefull website SSL Certificate Checker.
+              </p>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span
+                  class="bg-emerald-900/50 text-emerald-300 text-xs font-semibold px-2.5 py-1 rounded-full"
+                  >HTML</span
+                >
+                <span
+                  class="bg-emerald-900/50 text-emerald-300 text-xs font-semibold px-2.5 py-1 rounded-full"
+                  >CSS</span
+                >
+                <span
+                  class="bg-emerald-900/50 text-emerald-300 text-xs font-semibold px-2.5 py-1 rounded-full"
+                  >JavaScript</span
+                >
+              </div>
+              <div class="flex items-center gap-4 mt-auto">
+                <a
+                  href="#"
+                  class="text-slate-400 hover:text-slate-300 font-semibold flex items-center gap-2"
+                >
+                  <i data-lucide="github" class="w-4 h-4"></i> Source Code
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="card rounded-xl overflow-hidden">
+            <img
+              src="Images/GithubProfileViewer.png"
+              onerror="this.onerror=null;this.src='https://placehold.co/600x400/171717/34d399?text=Project+Image';"
+              alt="Travel Project"
+              class="w-full h-auto object-cover"
+            />
+            <div class="p-6">
+              <h3 class="text-xl font-bold text-slate-100 mb-2">
+                Github Github Profile Viewer
+              </h3>
+              <p class="text-slate-400 mb-4">
+                An simple Github profile Viewer that provide information about
+                user .
+              </p>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span
+                  class="bg-emerald-900/50 text-emerald-300 text-xs font-semibold px-2.5 py-1 rounded-full"
+                  >HTML</span
+                >
+                <span
+                  class="bg-emerald-900/50 text-emerald-300 text-xs font-semibold px-2.5 py-1 rounded-full"
+                  >CSS</span
+                >
+                <span
+                  class="bg-emerald-900/50 text-emerald-300 text-xs font-semibold px-2.5 py-1 rounded-full"
+                  >JavaScript</span
+                >
+              </div>
+              <div class="flex items-center gap-4 mt-auto">
+                <a
+                  href="#"
+                  target="_blank"
+                  class="text-emerald-400 hover:text-emerald-300 font-semibold flex items-center gap-2"
+                >
+                  <i data-lucide="external-link" class="w-4 h-4"></i> Live Demo
+                </a>
+                <a
+                  href="#"
+                  class="text-slate-400 hover:text-slate-300 font-semibold flex items-center gap-2"
+                >
+                  <i data-lucide="github" class="w-4 h-4"></i> Source Code
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="card rounded-xl overflow-hidden">
+            <img
+              src="Images/obj shape detector .png"
+              onerror="this.onerror=null;this.src='https://placehold.co/600x400/171717/34d399?text=Project+Image';"
+              alt="Travel Project"
+              class="w-full h-auto object-cover"
+            />
+            <div class="p-6">
+              <h3 class="text-xl font-bold text-slate-100 mb-2">
+                Object Shape detector
+              </h3>
+              <p class="text-slate-400 mb-4">
+                An simple GUI Based Program That detect the object shape.
+              </p>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span
+                  class="bg-emerald-900/50 text-emerald-300 text-xs font-semibold px-2.5 py-1 rounded-full"
+                  >Python</span
+                >
+                <span
+                  class="bg-emerald-900/50 text-emerald-300 text-xs font-semibold px-2.5 py-1 rounded-full"
+                  >customtkinter</span
+                >
+                <span
+                  class="bg-emerald-900/50 text-emerald-300 text-xs font-semibold px-2.5 py-1 rounded-full"
+                  >Numpy</span
+                >
+                <span
+                  class="bg-emerald-900/50 text-emerald-300 text-xs font-semibold px-2.5 py-1 rounded-full"
+                  >OpenCV</span
+                >
+              </div>
+              <div class="flex items-center gap-4 mt-auto">
+                <a
+                  href="#"
+                  target="_blank"
+                  class="text-emerald-400 hover:text-emerald-300 font-semibold flex items-center gap-2"
+                >
+                  <i data-lucide="external-link" class="w-4 h-4"></i> Live Demo
+                </a>
+                <a
+                  href="#"
+                  class="text-slate-400 hover:text-slate-300 font-semibold flex items-center gap-2"
+                >
+                  <i data-lucide="github" class="w-4 h-4"></i> Source Code
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="card rounded-xl overflow-hidden">
+            <img
+              src="Images/dis measure .png"
+              onerror="this.onerror=null;this.src='https://placehold.co/600x400/171717/34d399?text=Project+Image';"
+              alt="Travel Project"
+              class="w-full h-auto object-cover"
+            />
+            <div class="p-6">
+              <h3 class="text-xl font-bold text-slate-100 mb-2">
+                Object Distance measure
+              </h3>
+              <p class="text-slate-400 mb-4">
+                A GUI Base Powerfull Program that Measure the Distance Between
+                Two Object .
+              </p>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span
+                  class="bg-emerald-900/50 text-emerald-300 text-xs font-semibold px-2.5 py-1 rounded-full"
+                  >Python</span
+                >
+                <span
+                  class="bg-emerald-900/50 text-emerald-300 text-xs font-semibold px-2.5 py-1 rounded-full"
+                  >customtkinter</span
+                >
+                <span
+                  class="bg-emerald-900/50 text-emerald-300 text-xs font-semibold px-2.5 py-1 rounded-full"
+                  >Numpy</span
+                >
+                <span
+                  class="bg-emerald-900/50 text-emerald-300 text-xs font-semibold px-2.5 py-1 rounded-full"
+                  >OpenCV</span
+                >
+              </div>
+              <div class="flex items-center gap-4 mt-auto">
+                <a
+                  href="#"
+                  target="_blank"
+                  class="text-emerald-400 hover:text-emerald-300 font-semibold flex items-center gap-2"
+                >
+                  <i data-lucide="external-link" class="w-4 h-4"></i> Live Demo
+                </a>
+                <a
+                  href="#"
+                  class="text-slate-400 hover:text-slate-300 font-semibold flex items-center gap-2"
+                >
+                  <i data-lucide="github" class="w-4 h-4"></i> Source Code
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="card rounded-xl overflow-hidden">
+            <img
+              src="Images/whatsaap massage sender .png"
+              onerror="this.onerror=null;this.src='https://placehold.co/600x400/171717/34d399?text=Project+Image';"
+              alt="Travel Project"
+              class="w-full h-auto object-cover"
+            />
+            <div class="p-6">
+              <h3 class="text-xl font-bold text-slate-100 mb-2">
+                Automatic massage Sender
+              </h3>
+              <p class="text-slate-400 mb-4">
+                Send the Business Massages Automatically On the Sheduled Time .
+              </p>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span
+                  class="bg-emerald-900/50 text-emerald-300 text-xs font-semibold px-2.5 py-1 rounded-full"
+                  >Python</span
+                >
+                <span
+                  class="bg-emerald-900/50 text-emerald-300 text-xs font-semibold px-2.5 py-1 rounded-full"
+                  >customtkinter</span
+                >
+                <span
+                  class="bg-emerald-900/50 text-emerald-300 text-xs font-semibold px-2.5 py-1 rounded-full"
+                  >pywhatkit</span
+                >
+              </div>
+              <div class="flex items-center gap-4 mt-auto">
+                <a
+                  href="#"
+                  target="_blank"
+                  class="text-emerald-400 hover:text-emerald-300 font-semibold flex items-center gap-2"
+                >
+                  <i data-lucide="external-link" class="w-4 h-4"></i> Live Demo
+                </a>
+                <a
+                  href="#"
+                  class="text-slate-400 hover:text-slate-300 font-semibold flex items-center gap-2"
+                >
+                  <i data-lucide="github" class="w-4 h-4"></i> Source Code
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
 
     <!-- Footer -->
     <footer class="border-t border-neutral-800">
-        <div class="container mx-auto px-4 py-8">
-            <div class="flex flex-col md:flex-row justify-between items-center text-center md:text-left">
-                <p class="text-slate-400 mb-4 md:mb-0">&copy; 2025 Rupesh Verma. All rights reserved.</p>
-                <div class="flex items-center space-x-6">
-                    <a href="#" class="text-slate-400 hover:text-sky-400 transition-colors">
-                        <i data-lucide="youtube" class="w-6 h-6"></i>
-                    </a>
-                    <a href="#" class="text-slate-400 hover:text-sky-400 transition-colors">
-                        <i data-lucide="instagram" class="w-6 h-6"></i>
-                    </a>
-                    <a href="#" class="text-slate-400 hover:text-sky-400 transition-colors">
-                        <i data-lucide="linkedin" class="w-6 h-6"></i>
-                    </a>
-                </div>
-            </div>
+      <div class="container mx-auto px-4 py-8">
+        <div
+          class="flex flex-col md:flex-row justify-between items-center text-center md:text-left"
+        >
+          <p class="text-slate-400 mb-4 md:mb-0">
+            &copy; 2025 Rupesh Verma. All rights reserved.
+          </p>
+          <div class="flex items-center space-x-6">
+            <a
+              href="#"
+              class="text-slate-400 hover:text-sky-400 transition-colors"
+            >
+              <i data-lucide="youtube" class="w-6 h-6"></i>
+            </a>
+            <a
+              href="#"
+              class="text-slate-400 hover:text-sky-400 transition-colors"
+            >
+              <i data-lucide="instagram" class="w-6 h-6"></i>
+            </a>
+            <a
+              href="#"
+              class="text-slate-400 hover:text-sky-400 transition-colors"
+            >
+              <i data-lucide="linkedin" class="w-6 h-6"></i>
+            </a>
+          </div>
         </div>
+      </div>
     </footer>
 
     <script>
-        // Initialize Lucide icons
-        lucide.createIcons();
+      // Initialize Lucide icons
+      lucide.createIcons();
     </script>
-</body>
+  </body>
 </html>

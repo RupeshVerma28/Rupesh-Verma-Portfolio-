@@ -1,677 +1,929 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Certificates & Badges - Rupesh Verma</title>
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
     <style>
-        /* * Custom styles to match the portfolio's theme.
+      /* * Custom styles to match the portfolio's theme.
          * The color palette is derived from the provided screenshots.
          */
-        :root {
-            --dark-bg: #0a0a0a;
-            --card-bg: #181818;
-            --hover-bg: #232323;
-            --primary-text: #ffffff;
-            --secondary-text: #a0aec0; /* A softer gray for secondary info */
-            --accent-blue: #3b82f6;
-            --accent-blue-dark: #2563eb;
-            --border-color: #2d3748; /* Subtle border for cards */
-        }
+      :root {
+        --dark-bg: #0a0a0a;
+        --card-bg: #181818;
+        --hover-bg: #232323;
+        --primary-text: #ffffff;
+        --secondary-text: #a0aec0; /* A softer gray for secondary info */
+        --accent-blue: #3b82f6;
+        --accent-blue-dark: #2563eb;
+        --border-color: #2d3748; /* Subtle border for cards */
+      }
 
-        body {
-            background-color: var(--dark-bg);
-            color: var(--primary-text);
-            font-family: 'Inter', sans-serif;
-        }
+      body {
+        background-color: var(--dark-bg);
+        color: var(--primary-text);
+        font-family: "Inter", sans-serif;
+      }
 
-        /* Header Styling */
-        .back-link {
-            color: var(--secondary-text);
-            font-weight: 500;
-            text-decoration: none;
-            transition: color 0.3s ease;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem; /* space between arrow and text */
-        }
+      /* Header Styling */
+      .back-link {
+        color: var(--secondary-text);
+        font-weight: 500;
+        text-decoration: none;
+        transition: color 0.3s ease;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem; /* space between arrow and text */
+      }
 
-        .back-link:hover {
-            color: var(--primary-text);
-        }
+      .back-link:hover {
+        color: var(--primary-text);
+      }
 
-        /* Card Styling */
-        .card-container {
-            perspective: 1000px;
-            width: 100%;
-            max-width: 340px; /* A bit more space */
-            height: 420px;
-            cursor: pointer;
-            margin: auto;
-        }
+      /* Card Styling */
+      .card-container {
+        perspective: 1000px;
+        width: 100%;
+        max-width: 340px; /* A bit more space */
+        height: 420px;
+        cursor: pointer;
+        margin: auto;
+      }
 
-        .card-inner {
-            position: relative;
-            width: 100%;
-            height: 100%;
-            text-align: center;
-            transition: transform 0.8s;
-            transform-style: preserve-3d;
-        }
+      .card-inner {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        transition: transform 0.8s;
+        transform-style: preserve-3d;
+      }
 
-        .card-inner.flipped {
-            transform: rotateY(180deg);
-        }
+      .card-inner.flipped {
+        transform: rotateY(180deg);
+      }
 
-        .card-front,
-        .card-back {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            backface-visibility: hidden;
-            border-radius: 1rem; /* Softer corners */
-            background-color: var(--card-bg);
-            border: 1px solid var(--border-color);
-            display: flex;
-            flex-direction: column;
-            overflow: hidden;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
-            transition: border-color 0.3s ease;
-        }
-        
-        /* Subtle hover effect inspired by the portfolio */
-        .card-container:hover .card-front,
-        .card-container:hover .card-back {
-            border-color: var(--accent-blue);
-        }
+      .card-front,
+      .card-back {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        backface-visibility: hidden;
+        border-radius: 1rem; /* Softer corners */
+        background-color: var(--card-bg);
+        border: 1px solid var(--border-color);
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+        transition: border-color 0.3s ease;
+      }
 
-        .card-front {
-            justify-content: space-between;
-        }
+      /* Subtle hover effect inspired by the portfolio */
+      .card-container:hover .card-front,
+      .card-container:hover .card-back {
+        border-color: var(--accent-blue);
+      }
 
-        .card-back {
-            transform: rotateY(180deg);
-            justify-content: center;
-            align-items: center;
-            padding: 1.5rem;
-        }
+      .card-front {
+        justify-content: space-between;
+      }
 
-        .card-image {
-            height: 240px; /* Adjusted for better fit */
-            width: 100%;
-            object-fit: contain;
-            padding: 1.5rem;
-            background-color: #2a2a2a; /* Darker background for the image */
-        }
+      .card-back {
+        transform: rotateY(180deg);
+        justify-content: center;
+        align-items: center;
+        padding: 1.5rem;
+      }
 
-        .card-caption {
-            background: var(--card-bg);
-            padding: 1.25rem 1.5rem;
-            text-align: left;
-        }
+      .card-image {
+        height: 240px; /* Adjusted for better fit */
+        width: 100%;
+        object-fit: contain;
+        padding: 1.5rem;
+        background-color: #2a2a2a; /* Darker background for the image */
+      }
 
-        .flip-button {
-            background-color: var(--accent-blue);
-            color: #fff;
-            padding: 8px 16px;
-            border-radius: 8px;
-            margin-top: 1rem;
-            font-weight: 500;
-            transition: all .3s ease;
-            border: none;
-            display: inline-block;
-        }
+      .card-caption {
+        background: var(--card-bg);
+        padding: 1.25rem 1.5rem;
+        text-align: left;
+      }
 
-        .flip-button:hover {
-            background-color: var(--accent-blue-dark);
-            transform: scale(1.05);
-        }
+      .flip-button {
+        background-color: var(--accent-blue);
+        color: #fff;
+        padding: 8px 16px;
+        border-radius: 8px;
+        margin-top: 1rem;
+        font-weight: 500;
+        transition: all 0.3s ease;
+        border: none;
+        display: inline-block;
+      }
+
+      .flip-button:hover {
+        background-color: var(--accent-blue-dark);
+        transform: scale(1.05);
+      }
     </style>
-</head>
-<body class="min-h-screen flex flex-col">
+  </head>
+  <body class="min-h-screen flex flex-col">
     <!-- Header -->
-    <header class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex justify-between items-center">
-        <h1 class="text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400">Rupesh Verma</h1>
-        <a href="index.html" class="back-link">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                <path fill-rule="evenodd" d="M9.707 14.707a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 1.414L7.414 9H15a1 1 0 110 2H7.414l2.293 2.293a1 1 0 010 1.414z" clip-rule="evenodd" />
-            </svg>
-            <span>Back to Home</span>
-        </a>
+    <header
+      class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex justify-between items-center"
+    >
+      <h1
+        class="text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400"
+      >
+        Rupesh Verma
+      </h1>
+      <a href="index.html" class="back-link">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-5 w-5"
+          viewBox="0 0 20 20"
+          fill="currentColor"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M9.707 14.707a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 1.414L7.414 9H15a1 1 0 110 2H7.414l2.293 2.293a1 1 0 010 1.414z"
+            clip-rule="evenodd"
+          />
+        </svg>
+        <span>Back to Home</span>
+      </a>
     </header>
 
     <!-- Main Content -->
     <main class="flex-grow container mx-auto py-10 px-4 sm:px-6 lg:px-8">
-        <h2 class="text-4xl font-bold text-center text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400 mb-12">Certificates & Badges</h2>
-        
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            
-            <div class="card-container">
-                <div class="card-inner">
-                    <div class="card-front">
-                        <img src="Images/Cisco cc.png" alt="Cisco Certificate" class="card-image" onerror="this.onerror=null;this.src='https://placehold.co/400x240/2a2a2a/ffffff?text=Image+Not+Found';">
-                        <div class="card-caption">
-                            <h3 class="text-lg font-semibold text-primary-text">Introduction to Cybersecurity</h3>
-                            <p class="text-sm text-secondary-text">Cisco</p>
-                            <button class="flip-button">View Details</button>
-                        </div>
-                    </div>
-                    <div class="card-back">
-                        <h3 class="text-xl font-bold mb-2">Introduction to Cybersecurity</h3>
-                        <p class="text-secondary-text">Provider: Cisco</p>
-                        <p class="text-secondary-text">Issued: Jan, 2025</p>
-                        <button class="flip-button mt-4">Flip Back</button>
-                    </div>
-                </div>
-            </div>
+      <h2
+        class="text-4xl font-bold text-center text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400 mb-12"
+      >
+        Certificates & Badges
+      </h2>
 
-            <div class="card-container">
-                <div class="card-inner">
-                    <div class="card-front">
-                        <img src="Images/IBM.png" alt="IBM Certificate" class="card-image" onerror="this.onerror=null;this.src='https://placehold.co/400x240/2a2a2a/ffffff?text=Image+Not+Found';">
-                        <div class="card-caption">
-                            <h3 class="text-lg font-semibold text-primary-text">Cybersecurity Fundamentals</h3>
-                            <p class="text-sm text-secondary-text">IBM</p>
-                            <button class="flip-button">View Details</button>
-                        </div>
-                    </div>
-                    <div class="card-back">
-                        <h3 class="text-xl font-bold mb-2">Cybersecurity Fundamentals</h3>
-                        <p class="text-secondary-text">Provider: IBM</p>
-                        <p class="text-secondary-text">Issued: July, 2025</p>
-                        <button class="flip-button mt-4">Flip Back</button>
-                    </div>
-                </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="card-container">
+          <div class="card-inner">
+            <div class="card-front">
+              <img
+                src="Images/oci.png"
+                alt="Oracle Cloud Infastructure Certificate"
+                class="card-image"
+                onerror="this.onerror=null;this.src='https://placehold.co/400x240/2a2a2a/ffffff?text=Image+Not+Found';"
+              />
+              <div class="card-caption">
+                <h3 class="text-lg font-semibold text-primary-text">
+                  Certified AI Foundations Associate
+                </h3>
+                <p class="text-sm text-secondary-text">
+                  Oracle Cloud Infrastructure
+                </p>
+                <button class="flip-button">View Details</button>
+              </div>
             </div>
-
-            <div class="card-container">
-                <div class="card-inner">
-                    <div class="card-front">
-                        <img src="Images/AI FOR ALL.png" alt="Intel Certificate" class="card-image" onerror="this.onerror=null;this.src='https://placehold.co/400x240/2a2a2a/ffffff?text=Image+Not+Found';">
-                        <div class="card-caption">
-                            <h3 class="text-lg font-semibold text-primary-text">AI For All</h3>
-                            <p class="text-sm text-secondary-text">Intel (SIDH)</p>
-                            <button class="flip-button">View Details</button>
-                        </div>
-                    </div>
-                    <div class="card-back">
-                        <h3 class="text-xl font-bold mb-2">AI For All</h3>
-                        <p class="text-secondary-text">Provider: Intel (SIDH)</p>
-                        <p class="text-secondary-text">Issued: April, 2025</p>
-                        <button class="flip-button mt-4">Flip Back</button>
-                    </div>
-                </div>
+            <div class="card-back">
+              <h3 class="text-xl font-bold mb-2">
+                Certified AI Foundations Associate
+              </h3>
+              <p class="text-secondary-text">
+                Provider: Oracle Cloud Infrastructure
+              </p>
+              <p class="text-secondary-text">Issued: Sep, 2025</p>
+              <button class="flip-button mt-4">Flip Back</button>
             </div>
-            
-            <div class="card-container">
-                <div class="card-inner">
-                    <div class="card-front">
-                        <img src="Images/Advance Excel.jpg" alt="Itronix Certificate" class="card-image" onerror="this.onerror=null;this.src='https://placehold.co/400x240/2a2a2a/ffffff?text=Image+Not+Found';">
-                        <div class="card-caption">
-                            <h3 class="text-lg font-semibold text-primary-text">Microsoft Advance Excel</h3>
-                            <p class="text-sm text-secondary-text">Itronix Solutions</p>
-                            <button class="flip-button">View Details</button>
-                        </div>
-                    </div>
-                    <div class="card-back">
-                        <h3 class="text-xl font-bold mb-2">Microsoft Advance Excel</h3>
-                        <p class="text-secondary-text">Provider: Itronix Solutions</p>
-                        <p class="text-secondary-text">Issued: March, 2023</p>
-                        <button class="flip-button mt-4">Flip Back</button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="card-container">
-                <div class="card-inner">
-                    <div class="card-front">
-                        <img src="Images/Android Bug Hunting .png" alt="Itronix Certificate" class="card-image" onerror="this.onerror=null;this.src='https://placehold.co/400x240/2a2a2a/ffffff?text=Image+Not+Found';">
-                        <div class="card-caption">
-                            <h3 class="text-lg font-semibold text-primary-text">Android Bug Bounty Hunting</h3>
-                            <p class="text-sm text-secondary-text">Itronix Solutions</p>
-                            <button class="flip-button">View Details</button>
-                        </div>
-                    </div>
-                    <div class="card-back">
-                        <h3 class="text-xl font-bold mb-2">Android Bug Bounty Hunting</h3>
-                        <p class="text-secondary-text">Provider: Ec council</p>
-                        <p class="text-secondary-text">Issued: May, 2025</p>
-                        <button class="flip-button mt-4">Flip Back</button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="card-container">
-                <div class="card-inner">
-                    <div class="card-front">
-                        <img src="Images/c++.jpg" alt="Itronix Certificate" class="card-image" onerror="this.onerror=null;this.src='https://placehold.co/400x240/2a2a2a/ffffff?text=Image+Not+Found';">
-                        <div class="card-caption">
-                            <h3 class="text-lg font-semibold text-primary-text">Object Oriented Programming with C++</h3>
-                            <p class="text-sm text-secondary-text">Itronix Solutions</p>
-                            <button class="flip-button">View Details</button>
-                        </div>
-                    </div>
-                    <div class="card-back">
-                        <h3 class="text-xl font-bold mb-2">Object Oriented Programming with C++</h3>
-                        <p class="text-secondary-text">Provider: Itronix Solutions</p>
-                        <p class="text-secondary-text">Issued: March, 2025</p>
-                        <button class="flip-button mt-4">Flip Back</button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="card-container">
-                <div class="card-inner">
-                    <div class="card-front">
-                        <img src="Images/ComputerHardware.png" alt="SIDH Certificate" class="card-image" onerror="this.onerror=null;this.src='https://placehold.co/400x240/2a2a2a/ffffff?text=Image+Not+Found';">
-                        <div class="card-caption">
-                            <h3 class="text-lg font-semibold text-primary-text">Field Technician Computing & Peripherals</h3>
-                            <p class="text-sm text-secondary-text">SIDH</p>
-                            <button class="flip-button">View Details</button>
-                        </div>
-                    </div>
-                    <div class="card-back">
-                        <h3 class="text-xl font-bold mb-2">Field Technician Computing & Peripherals</h3>
-                        <p class="text-secondary-text">Provider: SIDH</p>
-                        <p class="text-secondary-text">Issued: Jun, 2025</p>
-                        <button class="flip-button mt-4">Flip Back</button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="card-container">
-                <div class="card-inner">
-                    <div class="card-front">
-                        <img src="Images/html5.png" alt="Infosys Certificate" class="card-image" onerror="this.onerror=null;this.src='https://placehold.co/400x240/2a2a2a/ffffff?text=Image+Not+Found';">
-                        <div class="card-caption">
-                            <h3 class="text-lg font-semibold text-primary-text">HTML5</h3>
-                            <p class="text-sm text-secondary-text">Infosys</p>
-                            <button class="flip-button">View Details</button>
-                        </div>
-                    </div>
-                    <div class="card-back">
-                        <h3 class="text-xl font-bold mb-2">HTML5</h3>
-                        <p class="text-secondary-text">Provider: Infosys</p>
-                        <p class="text-secondary-text">Issued: May, 2025</p>
-                        <button class="flip-button mt-4">Flip Back</button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="card-container">
-                <div class="card-inner">
-                    <div class="card-front">
-                        <img src="Images/css3.png" alt="Infosys Certificate" class="card-image" onerror="this.onerror=null;this.src='https://placehold.co/400x240/2a2a2a/ffffff?text=Image+Not+Found';">
-                        <div class="card-caption">
-                            <h3 class="text-lg font-semibold text-primary-text">CSS3</h3>
-                            <p class="text-sm text-secondary-text">Infosys</p>
-                            <button class="flip-button">View Details</button>
-                        </div>
-                    </div>
-                    <div class="card-back">
-                        <h3 class="text-xl font-bold mb-2">CSS3</h3>
-                        <p class="text-secondary-text">Provider: Infosys</p>
-                        <p class="text-secondary-text">Issued: Jun, 2025</p>
-                        <button class="flip-button mt-4">Flip Back</button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="card-container">
-                <div class="card-inner">
-                    <div class="card-front">
-                        <img src="Images/js.png" alt="Infosys Certificate" class="card-image" onerror="this.onerror=null;this.src='https://placehold.co/400x240/2a2a2a/ffffff?text=Image+Not+Found';">
-                        <div class="card-caption">
-                            <h3 class="text-lg font-semibold text-primary-text">Javascript</h3>
-                            <p class="text-sm text-secondary-text">Infosys</p>
-                            <button class="flip-button">View Details</button>
-                        </div>
-                    </div>
-                    <div class="card-back">
-                        <h3 class="text-xl font-bold mb-2">Javascript</h3>
-                        <p class="text-secondary-text">Provider: Infosys</p>
-                        <p class="text-secondary-text">Issued: Jun, 2025</p>
-                        <button class="flip-button mt-4">Flip Back</button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="card-container">
-                <div class="card-inner">
-                    <div class="card-front">
-                        <img src="Images/Emailwriting.png" alt="Infosys Certificate" class="card-image" onerror="this.onerror=null;this.src='https://placehold.co/400x240/2a2a2a/ffffff?text=Image+Not+Found';">
-                        <div class="card-caption">
-                            <h3 class="text-lg font-semibold text-primary-text">Email Writing</h3>
-                            <p class="text-sm text-secondary-text">Infosys</p>
-                            <button class="flip-button">View Details</button>
-                        </div>
-                    </div>
-                    <div class="card-back">
-                        <h3 class="text-xl font-bold mb-2">Email Writing</h3>
-                        <p class="text-secondary-text">Provider: Infosys</p>
-                        <p class="text-secondary-text">Issued: N/A</p>
-                        <button class="flip-button mt-4">Flip Back</button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="card-container">
-                <div class="card-inner">
-                    <div class="card-front">
-                        <img src="Images/EMAN.png" alt="Great Learning Certificate" class="card-image" onerror="this.onerror=null;this.src='https://placehold.co/400x240/2a2a2a/ffffff?text=Image+Not+Found';">
-                        <div class="card-caption">
-                            <h3 class="text-lg font-semibold text-primary-text">Ethical Hacking - Mobile Platforms and Network Architecture</h3>
-                            <p class="text-sm text-secondary-text">Great Learning</p>
-                            <button class="flip-button">View Details</button>
-                        </div>
-                    </div>
-                    <div class="card-back">
-                        <h3 class="text-xl font-bold mb-2">Ethical Hacking - Mobile Platforms and Network Architecture</h3>
-                        <p class="text-secondary-text">Provider: Great Learning</p>
-                        <p class="text-secondary-text">Issued: Jul, 2024</p>
-                        <button class="flip-button mt-4">Flip Back</button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="card-container">
-                <div class="card-inner">
-                    <div class="card-front">
-                        <img src="Images/ethicalhackngprofessional.png" alt="Itronix Certificate" class="card-image" onerror="this.onerror=null;this.src='https://placehold.co/400x240/2a2a2a/ffffff?text=Image+Not+Found';">
-                        <div class="card-caption">
-                            <h3 class="text-lg font-semibold text-primary-text">Ethical Hacking Professional</h3>
-                            <p class="text-sm text-secondary-text">Itronix Solutions</p>
-                            <button class="flip-button">View Details</button>
-                        </div>
-                    </div>
-                    <div class="card-back">
-                        <h3 class="text-xl font-bold mb-2">Ethical Hacking Professional</h3>
-                        <p class="text-secondary-text">Provider: Itronix Solutions</p>
-                        <p class="text-secondary-text">Issued: May, 2025</p>
-                        <button class="flip-button mt-4">Flip Back</button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="card-container">
-                <div class="card-inner">
-                    <div class="card-front">
-                        <img src="Images/GenAI.png" alt="LinkedIn Certificate" class="card-image" onerror="this.onerror=null;this.src='https://placehold.co/400x240/2a2a2a/ffffff?text=Image+Not+Found';">
-                        <div class="card-caption">
-                            <h3 class="text-lg font-semibold text-primary-text">Generative AI</h3>
-                            <p class="text-sm text-secondary-text">LinkedIn</p>
-                            <button class="flip-button">View Details</button>
-                        </div>
-                    </div>
-                    <div class="card-back">
-                        <h3 class="text-xl font-bold mb-2">Generative AI</h3>
-                        <p class="text-secondary-text">Provider: LinkedIn</p>
-                        <p class="text-secondary-text">Issued: May, 2024</p>
-                        <button class="flip-button mt-4">Flip Back</button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="card-container">
-                <div class="card-inner">
-                    <div class="card-front">
-                        <img src="Images/information security.png" alt="Infosys Certificate" class="card-image" onerror="this.onerror=null;this.src='https://placehold.co/400x240/2a2a2a/ffffff?text=Image+Not+Found';">
-                        <div class="card-caption">
-                            <h3 class="text-lg font-semibold text-primary-text">Information Security</h3>
-                            <p class="text-sm text-secondary-text">Infosys</p>
-                            <button class="flip-button">View Details</button>
-                        </div>
-                    </div>
-                    <div class="card-back">
-                        <h3 class="text-xl font-bold mb-2">Information Security</h3>
-                        <p class="text-secondary-text">Provider: Infosys</p>
-                        <p class="text-secondary-text">Issued: August, 2024</p>
-                        <button class="flip-button mt-4">Flip Back</button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="card-container">
-                <div class="card-inner">
-                    <div class="card-front">
-                        <img src="Images/iso.png" alt="Meity Certificate" class="card-image" onerror="this.onerror=null;this.src='https://placehold.co/400x240/2a2a2a/ffffff?text=Image+Not+Found';">
-                        <div class="card-caption">
-                            <h3 class="text-lg font-semibold text-primary-text">Cyber Hygiene Practices</h3>
-                            <p class="text-sm text-secondary-text">Meity</p>
-                            <button class="flip-button">View Details</button>
-                        </div>
-                    </div>
-                    <div class="card-back">
-                        <h3 class="text-xl font-bold mb-2">Cyber Hygiene Practices</h3>
-                        <p class="text-secondary-text">Provider: Meity</p>
-                        <p class="text-secondary-text">Issued: February, 2023</p>
-                        <button class="flip-button mt-4">Flip Back</button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="card-container">
-                <div class="card-inner">
-                    <div class="card-front">
-                        <img src="Images/P3UT.png" alt="EC-Council Certificate" class="card-image" onerror="this.onerror=null;this.src='https://placehold.co/400x240/2a2a2a/ffffff?text=Image+Not+Found';">
-                        <div class="card-caption">
-                            <h3 class="text-lg font-semibold text-primary-text">Python 3 With Turtle Graphics</h3>
-                            <p class="text-sm text-secondary-text">EC-Council</p>
-                            <button class="flip-button">View Details</button>
-                        </div>
-                    </div>
-                    <div class="card-back">
-                        <h3 class="text-xl font-bold mb-2">Python 3 With Turtle Graphics</h3>
-                        <p class="text-secondary-text">Provider: EC-Council</p>
-                        <p class="text-secondary-text">Issued: Jun, 2024</p>
-                        <button class="flip-button mt-4">Flip Back</button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="card-container">
-                <div class="card-inner">
-                    <div class="card-front">
-                        <img src="Images/PPT.png" alt="Infosys Certificate" class="card-image" onerror="this.onerror=null;this.src='https://placehold.co/400x240/2a2a2a/ffffff?text=Image+Not+Found';">
-                        <div class="card-caption">
-                            <h3 class="text-lg font-semibold text-primary-text">High Impact Presentations</h3>
-                            <p class="text-sm text-secondary-text">Infosys</p>
-                            <button class="flip-button">View Details</button>
-                        </div>
-                    </div>
-                    <div class="card-back">
-                        <h3 class="text-xl font-bold mb-2">High Impact Presentations</h3>
-                        <p class="text-secondary-text">Provider: Infosys</p>
-                        <p class="text-secondary-text">Issued: June, 2025</p>
-                        <button class="flip-button mt-4">Flip Back</button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="card-container">
-                <div class="card-inner">
-                    <div class="card-front">
-                        <img src="Images/TDA.png" alt="The Digital Adda Certificate" class="card-image" onerror="this.onerror=null;this.src='https://placehold.co/400x240/2a2a2a/ffffff?text=Image+Not+Found';">
-                        <div class="card-caption">
-                            <h3 class="text-lg font-semibold text-primary-text">Computer Hardware & Networking</h3>
-                            <p class="text-sm text-secondary-text">The Digital Adda (TDA)</p>
-                            <button class="flip-button">View Details</button>
-                        </div>
-                    </div>
-                    <div class="card-back">
-                        <h3 class="text-xl font-bold mb-2">Computer Hardware & Networking</h3>
-                        <p class="text-secondary-text">Provider: The Digital Adda (TDA)</p>
-                        <p class="text-secondary-text">Issued: March, 2023</p>
-                        <button class="flip-button mt-4">Flip Back</button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="card-container">
-                <div class="card-inner">
-                    <div class="card-front">
-                        <img src="Images/TimeManagement.png" alt="Infosys Certificate" class="card-image" onerror="this.onerror=null;this.src='https://placehold.co/400x240/2a2a2a/ffffff?text=Image+Not+Found';">
-                        <div class="card-caption">
-                            <h3 class="text-lg font-semibold text-primary-text">Time Management</h3>
-                            <p class="text-sm text-secondary-text">Infosys</p>
-                            <button class="flip-button">View Details</button>
-                        </div>
-                    </div>
-                    <div class="card-back">
-                        <h3 class="text-xl font-bold mb-2">Time Management</h3>
-                        <p class="text-secondary-text">Provider: Infosys</p>
-                        <p class="text-secondary-text">Issued: May, 2025</p>
-                        <button class="flip-button mt-4">Flip Back</button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="card-container">
-                <div class="card-inner">
-                    <div class="card-front">
-                        <img src="Images/pydeve.png" alt="Udemy Certificate" class="card-image" onerror="this.onerror=null;this.src='https://placehold.co/400x240/2a2a2a/ffffff?text=Image+Not+Found';">
-                        <div class="card-caption">
-                            <h3 class="text-lg font-semibold text-primary-text">Python Development Essentials</h3>
-                            <p class="text-sm text-secondary-text">Udemy</p>
-                            <button class="flip-button">View Details</button>
-                        </div>
-                    </div>
-                    <div class="card-back">
-                        <h3 class="text-xl font-bold mb-2">Python Development Essentials</h3>
-                        <p class="text-secondary-text">Provider: Udemy</p>
-                        <p class="text-secondary-text">Issued: March, 2024</p>
-                        <button class="flip-button mt-4">Flip Back</button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="card-container">
-                <div class="card-inner">
-                    <div class="card-front">
-                        <img src="Images/TMCYBERSEC.png" alt="Tech Mahindra Certificate" class="card-image" onerror="this.onerror=null;this.src='https://placehold.co/400x240/2a2a2a/ffffff?text=Image+Not+Found';">
-                        <div class="card-caption">
-                            <h3 class="text-lg font-semibold text-primary-text">Cybersecurity</h3>
-                            <p class="text-sm text-secondary-text">Tech Mahindra</p>
-                            <button class="flip-button">View Details</button>
-                        </div>
-                    </div>
-                    <div class="card-back">
-                        <h3 class="text-xl font-bold mb-2">Cybersecurity</h3>
-                        <p class="text-secondary-text">Provider: Tech Mahindra</p>
-                        <p class="text-secondary-text">Issued: Jul, 2025</p>
-                        <button class="flip-button mt-4">Flip Back</button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="card-container">
-                <div class="card-inner">
-                    <div class="card-front">
-                        <img src="Images/ux.png" alt="Infosys Certificate" class="card-image" onerror="this.onerror=null;this.src='https://placehold.co/400x240/2a2a2a/ffffff?text=Image+Not+Found';">
-                        <div class="card-caption">
-                            <h3 class="text-lg font-semibold text-primary-text">User Experience</h3>
-                            <p class="text-sm text-secondary-text">Infosys</p>
-                            <button class="flip-button">View Details</button>
-                        </div>
-                    </div>
-                    <div class="card-back">
-                        <h3 class="text-xl font-bold mb-2">User Experience</h3>
-                        <p class="text-secondary-text">Provider: Infosys</p>
-                        <p class="text-secondary-text">Issued: June, 2025</p>
-                        <button class="flip-button mt-4">Flip Back</button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="card-container">
-                <div class="card-inner">
-                    <div class="card-front">
-                        <img src="Images/WebsiteCreation.png" alt="Infosys Certificate" class="card-image" onerror="this.onerror=null;this.src='https://placehold.co/400x240/2a2a2a/ffffff?text=Image+Not+Found';">
-                        <div class="card-caption">
-                            <h3 class="text-lg font-semibold text-primary-text">Website Creation</h3>
-                            <p class="text-sm text-secondary-text">Infosys</p>
-                            <button class="flip-button">View Details</button>
-                        </div>
-                    </div>
-                    <div class="card-back">
-                        <h3 class="text-xl font-bold mb-2">Website Creation</h3>
-                        <p class="text-secondary-text">Provider: Infosys</p>
-                        <p class="text-secondary-text">Issued: June, 2025</p>
-                        <button class="flip-button mt-4">Flip Back</button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="card-container">
-                <div class="card-inner">
-                    <div class="card-front">
-                        <img src="Images/DEO.png" alt="Itronix Certificate" class="card-image" onerror="this.onerror=null;this.src='https://placehold.co/400x240/2a2a2a/ffffff?text=Image+Not+Found';">
-                        <div class="card-caption">
-                            <h3 class="text-lg font-semibold text-primary-text">Data Entry Operator (DEO)</h3>
-                            <p class="text-sm text-secondary-text">Itronix Solutions</p>
-                            <button class="flip-button">View Details</button>
-                        </div>
-                    </div>
-                    <div class="card-back">
-                        <h3 class="text-xl font-bold mb-2">Data Entry Operator (DEO)</h3>
-                        <p class="text-secondary-text">Provider: Itronix Solutions</p>
-                        <p class="text-secondary-text">Issued: July, 2023</p>
-                        <button class="flip-button mt-4">Flip Back</button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="card-container">
-                <div class="card-inner">
-                    <div class="card-front">
-                        <img src="Images/TyprScript.png" alt="Infosys Certificate" class="card-image" onerror="this.onerror=null;this.src='https://placehold.co/400x240/2a2a2a/ffffff?text=Image+Not+Found';">
-                        <div class="card-caption">
-                            <h3 class="text-lg font-semibold text-primary-text">TypeScript</h3>
-                            <p class="text-sm text-secondary-text">Infosys</p>
-                            <button class="flip-button">View Details</button>
-                        </div>
-                    </div>
-                    <div class="card-back">
-                        <h3 class="text-xl font-bold mb-2">TypeScript</h3>
-                        <p class="text-secondary-text">Provider: Infosys</p>
-                        <p class="text-secondary-text">Issued: June, 2025</p>
-                        <button class="flip-button mt-4">Flip Back</button>
-                    </div>
-                </div>
-            </div>
-
+          </div>
         </div>
+
+        <div class="card-container">
+          <div class="card-inner">
+            <div class="card-front">
+              <img
+                src="Images/Cisco cc.png"
+                alt="cisco"
+                class="card-image"
+                onerror="this.onerror=null;this.src='https://placehold.co/400x240/2a2a2a/ffffff?text=Image+Not+Found';"
+              />
+              <div class="card-caption">
+                <h3 class="text-lg font-semibold text-primary-text">
+                  InTroduction To Cyber Security
+                </h3>
+                <p class="text-sm text-secondary-text">Cisco</p>
+                <button class="flip-button">View Details</button>
+              </div>
+            </div>
+            <div class="card-back">
+              <h3 class="text-xl font-bold mb-2">
+                Introduction to Cybersecurity
+              </h3>
+              <p class="text-secondary-text">Provider: Cisco</p>
+              <p class="text-secondary-text">Issued: Jan, 2025</p>
+              <button class="flip-button mt-4">Flip Back</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="card-container">
+          <div class="card-inner">
+            <div class="card-front">
+              <img
+                src="Images/IBM.png"
+                alt="IBM Certificate"
+                class="card-image"
+                onerror="this.onerror=null;this.src='https://placehold.co/400x240/2a2a2a/ffffff?text=Image+Not+Found';"
+              />
+              <div class="card-caption">
+                <h3 class="text-lg font-semibold text-primary-text">
+                  Cybersecurity Fundamentals
+                </h3>
+                <p class="text-sm text-secondary-text">IBM</p>
+                <button class="flip-button">View Details</button>
+              </div>
+            </div>
+            <div class="card-back">
+              <h3 class="text-xl font-bold mb-2">Cybersecurity Fundamentals</h3>
+              <p class="text-secondary-text">Provider: IBM</p>
+              <p class="text-secondary-text">Issued: July, 2025</p>
+              <button class="flip-button mt-4">Flip Back</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="card-container">
+          <div class="card-inner">
+            <div class="card-front">
+              <img
+                src="Images/AI FOR ALL.png"
+                alt="Intel Certificate"
+                class="card-image"
+                onerror="this.onerror=null;this.src='https://placehold.co/400x240/2a2a2a/ffffff?text=Image+Not+Found';"
+              />
+              <div class="card-caption">
+                <h3 class="text-lg font-semibold text-primary-text">
+                  AI For All
+                </h3>
+                <p class="text-sm text-secondary-text">Intel (SIDH)</p>
+                <button class="flip-button">View Details</button>
+              </div>
+            </div>
+            <div class="card-back">
+              <h3 class="text-xl font-bold mb-2">AI For All</h3>
+              <p class="text-secondary-text">Provider: Intel (SIDH)</p>
+              <p class="text-secondary-text">Issued: April, 2025</p>
+              <button class="flip-button mt-4">Flip Back</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="card-container">
+          <div class="card-inner">
+            <div class="card-front">
+              <img
+                src="Images/Advance Excel.jpg"
+                alt="Itronix Certificate"
+                class="card-image"
+                onerror="this.onerror=null;this.src='https://placehold.co/400x240/2a2a2a/ffffff?text=Image+Not+Found';"
+              />
+              <div class="card-caption">
+                <h3 class="text-lg font-semibold text-primary-text">
+                  Microsoft Advance Excel
+                </h3>
+                <p class="text-sm text-secondary-text">Itronix Solutions</p>
+                <button class="flip-button">View Details</button>
+              </div>
+            </div>
+            <div class="card-back">
+              <h3 class="text-xl font-bold mb-2">Microsoft Advance Excel</h3>
+              <p class="text-secondary-text">Provider: Itronix Solutions</p>
+              <p class="text-secondary-text">Issued: March, 2023</p>
+              <button class="flip-button mt-4">Flip Back</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="card-container">
+          <div class="card-inner">
+            <div class="card-front">
+              <img
+                src="Images/Android Bug Hunting .png"
+                alt="Itronix Certificate"
+                class="card-image"
+                onerror="this.onerror=null;this.src='https://placehold.co/400x240/2a2a2a/ffffff?text=Image+Not+Found';"
+              />
+              <div class="card-caption">
+                <h3 class="text-lg font-semibold text-primary-text">
+                  Android Bug Bounty Hunting
+                </h3>
+                <p class="text-sm text-secondary-text">Itronix Solutions</p>
+                <button class="flip-button">View Details</button>
+              </div>
+            </div>
+            <div class="card-back">
+              <h3 class="text-xl font-bold mb-2">Android Bug Bounty Hunting</h3>
+              <p class="text-secondary-text">Provider: Ec council</p>
+              <p class="text-secondary-text">Issued: May, 2025</p>
+              <button class="flip-button mt-4">Flip Back</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="card-container">
+          <div class="card-inner">
+            <div class="card-front">
+              <img
+                src="Images/c++.jpg"
+                alt="Itronix Certificate"
+                class="card-image"
+                onerror="this.onerror=null;this.src='https://placehold.co/400x240/2a2a2a/ffffff?text=Image+Not+Found';"
+              />
+              <div class="card-caption">
+                <h3 class="text-lg font-semibold text-primary-text">
+                  Object Oriented Programming with C++
+                </h3>
+                <p class="text-sm text-secondary-text">Itronix Solutions</p>
+                <button class="flip-button">View Details</button>
+              </div>
+            </div>
+            <div class="card-back">
+              <h3 class="text-xl font-bold mb-2">
+                Object Oriented Programming with C++
+              </h3>
+              <p class="text-secondary-text">Provider: Itronix Solutions</p>
+              <p class="text-secondary-text">Issued: March, 2025</p>
+              <button class="flip-button mt-4">Flip Back</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="card-container">
+          <div class="card-inner">
+            <div class="card-front">
+              <img
+                src="Images/ComputerHardware.png"
+                alt="SIDH Certificate"
+                class="card-image"
+                onerror="this.onerror=null;this.src='https://placehold.co/400x240/2a2a2a/ffffff?text=Image+Not+Found';"
+              />
+              <div class="card-caption">
+                <h3 class="text-lg font-semibold text-primary-text">
+                  Field Technician Computing & Peripherals
+                </h3>
+                <p class="text-sm text-secondary-text">SIDH</p>
+                <button class="flip-button">View Details</button>
+              </div>
+            </div>
+            <div class="card-back">
+              <h3 class="text-xl font-bold mb-2">
+                Field Technician Computing & Peripherals
+              </h3>
+              <p class="text-secondary-text">Provider: SIDH</p>
+              <p class="text-secondary-text">Issued: Jun, 2025</p>
+              <button class="flip-button mt-4">Flip Back</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="card-container">
+          <div class="card-inner">
+            <div class="card-front">
+              <img
+                src="Images/html5.png"
+                alt="Infosys Certificate"
+                class="card-image"
+                onerror="this.onerror=null;this.src='https://placehold.co/400x240/2a2a2a/ffffff?text=Image+Not+Found';"
+              />
+              <div class="card-caption">
+                <h3 class="text-lg font-semibold text-primary-text">HTML5</h3>
+                <p class="text-sm text-secondary-text">Infosys</p>
+                <button class="flip-button">View Details</button>
+              </div>
+            </div>
+            <div class="card-back">
+              <h3 class="text-xl font-bold mb-2">HTML5</h3>
+              <p class="text-secondary-text">Provider: Infosys</p>
+              <p class="text-secondary-text">Issued: May, 2025</p>
+              <button class="flip-button mt-4">Flip Back</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="card-container">
+          <div class="card-inner">
+            <div class="card-front">
+              <img
+                src="Images/css3.png"
+                alt="Infosys Certificate"
+                class="card-image"
+                onerror="this.onerror=null;this.src='https://placehold.co/400x240/2a2a2a/ffffff?text=Image+Not+Found';"
+              />
+              <div class="card-caption">
+                <h3 class="text-lg font-semibold text-primary-text">CSS3</h3>
+                <p class="text-sm text-secondary-text">Infosys</p>
+                <button class="flip-button">View Details</button>
+              </div>
+            </div>
+            <div class="card-back">
+              <h3 class="text-xl font-bold mb-2">CSS3</h3>
+              <p class="text-secondary-text">Provider: Infosys</p>
+              <p class="text-secondary-text">Issued: Jun, 2025</p>
+              <button class="flip-button mt-4">Flip Back</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="card-container">
+          <div class="card-inner">
+            <div class="card-front">
+              <img
+                src="Images/js.png"
+                alt="Infosys Certificate"
+                class="card-image"
+                onerror="this.onerror=null;this.src='https://placehold.co/400x240/2a2a2a/ffffff?text=Image+Not+Found';"
+              />
+              <div class="card-caption">
+                <h3 class="text-lg font-semibold text-primary-text">
+                  Javascript
+                </h3>
+                <p class="text-sm text-secondary-text">Infosys</p>
+                <button class="flip-button">View Details</button>
+              </div>
+            </div>
+            <div class="card-back">
+              <h3 class="text-xl font-bold mb-2">Javascript</h3>
+              <p class="text-secondary-text">Provider: Infosys</p>
+              <p class="text-secondary-text">Issued: Jun, 2025</p>
+              <button class="flip-button mt-4">Flip Back</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="card-container">
+          <div class="card-inner">
+            <div class="card-front">
+              <img
+                src="Images/Emailwriting.png"
+                alt="Infosys Certificate"
+                class="card-image"
+                onerror="this.onerror=null;this.src='https://placehold.co/400x240/2a2a2a/ffffff?text=Image+Not+Found';"
+              />
+              <div class="card-caption">
+                <h3 class="text-lg font-semibold text-primary-text">
+                  Email Writing
+                </h3>
+                <p class="text-sm text-secondary-text">Infosys</p>
+                <button class="flip-button">View Details</button>
+              </div>
+            </div>
+            <div class="card-back">
+              <h3 class="text-xl font-bold mb-2">Email Writing</h3>
+              <p class="text-secondary-text">Provider: Infosys</p>
+              <p class="text-secondary-text">Issued: N/A</p>
+              <button class="flip-button mt-4">Flip Back</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="card-container">
+          <div class="card-inner">
+            <div class="card-front">
+              <img
+                src="Images/EMAN.png"
+                alt="Great Learning Certificate"
+                class="card-image"
+                onerror="this.onerror=null;this.src='https://placehold.co/400x240/2a2a2a/ffffff?text=Image+Not+Found';"
+              />
+              <div class="card-caption">
+                <h3 class="text-lg font-semibold text-primary-text">
+                  Ethical Hacking - Mobile Platforms and Network Architecture
+                </h3>
+                <p class="text-sm text-secondary-text">Great Learning</p>
+                <button class="flip-button">View Details</button>
+              </div>
+            </div>
+            <div class="card-back">
+              <h3 class="text-xl font-bold mb-2">
+                Ethical Hacking - Mobile Platforms and Network Architecture
+              </h3>
+              <p class="text-secondary-text">Provider: Great Learning</p>
+              <p class="text-secondary-text">Issued: Jul, 2024</p>
+              <button class="flip-button mt-4">Flip Back</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="card-container">
+          <div class="card-inner">
+            <div class="card-front">
+              <img
+                src="Images/ethicalhackngprofessional.png"
+                alt="Itronix Certificate"
+                class="card-image"
+                onerror="this.onerror=null;this.src='https://placehold.co/400x240/2a2a2a/ffffff?text=Image+Not+Found';"
+              />
+              <div class="card-caption">
+                <h3 class="text-lg font-semibold text-primary-text">
+                  Ethical Hacking Professional
+                </h3>
+                <p class="text-sm text-secondary-text">Itronix Solutions</p>
+                <button class="flip-button">View Details</button>
+              </div>
+            </div>
+            <div class="card-back">
+              <h3 class="text-xl font-bold mb-2">
+                Ethical Hacking Professional
+              </h3>
+              <p class="text-secondary-text">Provider: Itronix Solutions</p>
+              <p class="text-secondary-text">Issued: May, 2025</p>
+              <button class="flip-button mt-4">Flip Back</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="card-container">
+          <div class="card-inner">
+            <div class="card-front">
+              <img
+                src="Images/GenAI.png"
+                alt="LinkedIn Certificate"
+                class="card-image"
+                onerror="this.onerror=null;this.src='https://placehold.co/400x240/2a2a2a/ffffff?text=Image+Not+Found';"
+              />
+              <div class="card-caption">
+                <h3 class="text-lg font-semibold text-primary-text">
+                  Generative AI
+                </h3>
+                <p class="text-sm text-secondary-text">LinkedIn</p>
+                <button class="flip-button">View Details</button>
+              </div>
+            </div>
+            <div class="card-back">
+              <h3 class="text-xl font-bold mb-2">Generative AI</h3>
+              <p class="text-secondary-text">Provider: LinkedIn</p>
+              <p class="text-secondary-text">Issued: May, 2024</p>
+              <button class="flip-button mt-4">Flip Back</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="card-container">
+          <div class="card-inner">
+            <div class="card-front">
+              <img
+                src="Images/information security.png"
+                alt="Infosys Certificate"
+                class="card-image"
+                onerror="this.onerror=null;this.src='https://placehold.co/400x240/2a2a2a/ffffff?text=Image+Not+Found';"
+              />
+              <div class="card-caption">
+                <h3 class="text-lg font-semibold text-primary-text">
+                  Information Security
+                </h3>
+                <p class="text-sm text-secondary-text">Infosys</p>
+                <button class="flip-button">View Details</button>
+              </div>
+            </div>
+            <div class="card-back">
+              <h3 class="text-xl font-bold mb-2">Information Security</h3>
+              <p class="text-secondary-text">Provider: Infosys</p>
+              <p class="text-secondary-text">Issued: August, 2024</p>
+              <button class="flip-button mt-4">Flip Back</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="card-container">
+          <div class="card-inner">
+            <div class="card-front">
+              <img
+                src="Images/iso.png"
+                alt="Meity Certificate"
+                class="card-image"
+                onerror="this.onerror=null;this.src='https://placehold.co/400x240/2a2a2a/ffffff?text=Image+Not+Found';"
+              />
+              <div class="card-caption">
+                <h3 class="text-lg font-semibold text-primary-text">
+                  Cyber Hygiene Practices
+                </h3>
+                <p class="text-sm text-secondary-text">Meity</p>
+                <button class="flip-button">View Details</button>
+              </div>
+            </div>
+            <div class="card-back">
+              <h3 class="text-xl font-bold mb-2">Cyber Hygiene Practices</h3>
+              <p class="text-secondary-text">Provider: Meity</p>
+              <p class="text-secondary-text">Issued: February, 2023</p>
+              <button class="flip-button mt-4">Flip Back</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="card-container">
+          <div class="card-inner">
+            <div class="card-front">
+              <img
+                src="Images/P3UT.png"
+                alt="EC-Council Certificate"
+                class="card-image"
+                onerror="this.onerror=null;this.src='https://placehold.co/400x240/2a2a2a/ffffff?text=Image+Not+Found';"
+              />
+              <div class="card-caption">
+                <h3 class="text-lg font-semibold text-primary-text">
+                  Python 3 With Turtle Graphics
+                </h3>
+                <p class="text-sm text-secondary-text">EC-Council</p>
+                <button class="flip-button">View Details</button>
+              </div>
+            </div>
+            <div class="card-back">
+              <h3 class="text-xl font-bold mb-2">
+                Python 3 With Turtle Graphics
+              </h3>
+              <p class="text-secondary-text">Provider: EC-Council</p>
+              <p class="text-secondary-text">Issued: Jun, 2024</p>
+              <button class="flip-button mt-4">Flip Back</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="card-container">
+          <div class="card-inner">
+            <div class="card-front">
+              <img
+                src="Images/PPT.png"
+                alt="Infosys Certificate"
+                class="card-image"
+                onerror="this.onerror=null;this.src='https://placehold.co/400x240/2a2a2a/ffffff?text=Image+Not+Found';"
+              />
+              <div class="card-caption">
+                <h3 class="text-lg font-semibold text-primary-text">
+                  High Impact Presentations
+                </h3>
+                <p class="text-sm text-secondary-text">Infosys</p>
+                <button class="flip-button">View Details</button>
+              </div>
+            </div>
+            <div class="card-back">
+              <h3 class="text-xl font-bold mb-2">High Impact Presentations</h3>
+              <p class="text-secondary-text">Provider: Infosys</p>
+              <p class="text-secondary-text">Issued: June, 2025</p>
+              <button class="flip-button mt-4">Flip Back</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="card-container">
+          <div class="card-inner">
+            <div class="card-front">
+              <img
+                src="Images/TDA.png"
+                alt="The Digital Adda Certificate"
+                class="card-image"
+                onerror="this.onerror=null;this.src='https://placehold.co/400x240/2a2a2a/ffffff?text=Image+Not+Found';"
+              />
+              <div class="card-caption">
+                <h3 class="text-lg font-semibold text-primary-text">
+                  Computer Hardware & Networking
+                </h3>
+                <p class="text-sm text-secondary-text">
+                  The Digital Adda (TDA)
+                </p>
+                <button class="flip-button">View Details</button>
+              </div>
+            </div>
+            <div class="card-back">
+              <h3 class="text-xl font-bold mb-2">
+                Computer Hardware & Networking
+              </h3>
+              <p class="text-secondary-text">
+                Provider: The Digital Adda (TDA)
+              </p>
+              <p class="text-secondary-text">Issued: March, 2023</p>
+              <button class="flip-button mt-4">Flip Back</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="card-container">
+          <div class="card-inner">
+            <div class="card-front">
+              <img
+                src="Images/TimeManagement.png"
+                alt="Infosys Certificate"
+                class="card-image"
+                onerror="this.onerror=null;this.src='https://placehold.co/400x240/2a2a2a/ffffff?text=Image+Not+Found';"
+              />
+              <div class="card-caption">
+                <h3 class="text-lg font-semibold text-primary-text">
+                  Time Management
+                </h3>
+                <p class="text-sm text-secondary-text">Infosys</p>
+                <button class="flip-button">View Details</button>
+              </div>
+            </div>
+            <div class="card-back">
+              <h3 class="text-xl font-bold mb-2">Time Management</h3>
+              <p class="text-secondary-text">Provider: Infosys</p>
+              <p class="text-secondary-text">Issued: May, 2025</p>
+              <button class="flip-button mt-4">Flip Back</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="card-container">
+          <div class="card-inner">
+            <div class="card-front">
+              <img
+                src="Images/pydeve.png"
+                alt="Udemy Certificate"
+                class="card-image"
+                onerror="this.onerror=null;this.src='https://placehold.co/400x240/2a2a2a/ffffff?text=Image+Not+Found';"
+              />
+              <div class="card-caption">
+                <h3 class="text-lg font-semibold text-primary-text">
+                  Python Development Essentials
+                </h3>
+                <p class="text-sm text-secondary-text">Udemy</p>
+                <button class="flip-button">View Details</button>
+              </div>
+            </div>
+            <div class="card-back">
+              <h3 class="text-xl font-bold mb-2">
+                Python Development Essentials
+              </h3>
+              <p class="text-secondary-text">Provider: Udemy</p>
+              <p class="text-secondary-text">Issued: March, 2024</p>
+              <button class="flip-button mt-4">Flip Back</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="card-container">
+          <div class="card-inner">
+            <div class="card-front">
+              <img
+                src="Images/TMCYBERSEC.png"
+                alt="Tech Mahindra Certificate"
+                class="card-image"
+                onerror="this.onerror=null;this.src='https://placehold.co/400x240/2a2a2a/ffffff?text=Image+Not+Found';"
+              />
+              <div class="card-caption">
+                <h3 class="text-lg font-semibold text-primary-text">
+                  Cybersecurity
+                </h3>
+                <p class="text-sm text-secondary-text">Tech Mahindra</p>
+                <button class="flip-button">View Details</button>
+              </div>
+            </div>
+            <div class="card-back">
+              <h3 class="text-xl font-bold mb-2">Cybersecurity</h3>
+              <p class="text-secondary-text">Provider: Tech Mahindra</p>
+              <p class="text-secondary-text">Issued: Jul, 2025</p>
+              <button class="flip-button mt-4">Flip Back</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="card-container">
+          <div class="card-inner">
+            <div class="card-front">
+              <img
+                src="Images/ux.png"
+                alt="Infosys Certificate"
+                class="card-image"
+                onerror="this.onerror=null;this.src='https://placehold.co/400x240/2a2a2a/ffffff?text=Image+Not+Found';"
+              />
+              <div class="card-caption">
+                <h3 class="text-lg font-semibold text-primary-text">
+                  User Experience
+                </h3>
+                <p class="text-sm text-secondary-text">Infosys</p>
+                <button class="flip-button">View Details</button>
+              </div>
+            </div>
+            <div class="card-back">
+              <h3 class="text-xl font-bold mb-2">User Experience</h3>
+              <p class="text-secondary-text">Provider: Infosys</p>
+              <p class="text-secondary-text">Issued: June, 2025</p>
+              <button class="flip-button mt-4">Flip Back</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="card-container">
+          <div class="card-inner">
+            <div class="card-front">
+              <img
+                src="Images/WebsiteCreation.png"
+                alt="Infosys Certificate"
+                class="card-image"
+                onerror="this.onerror=null;this.src='https://placehold.co/400x240/2a2a2a/ffffff?text=Image+Not+Found';"
+              />
+              <div class="card-caption">
+                <h3 class="text-lg font-semibold text-primary-text">
+                  Website Creation
+                </h3>
+                <p class="text-sm text-secondary-text">Infosys</p>
+                <button class="flip-button">View Details</button>
+              </div>
+            </div>
+            <div class="card-back">
+              <h3 class="text-xl font-bold mb-2">Website Creation</h3>
+              <p class="text-secondary-text">Provider: Infosys</p>
+              <p class="text-secondary-text">Issued: June, 2025</p>
+              <button class="flip-button mt-4">Flip Back</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="card-container">
+          <div class="card-inner">
+            <div class="card-front">
+              <img
+                src="Images/DEO.png"
+                alt="Itronix Certificate"
+                class="card-image"
+                onerror="this.onerror=null;this.src='https://placehold.co/400x240/2a2a2a/ffffff?text=Image+Not+Found';"
+              />
+              <div class="card-caption">
+                <h3 class="text-lg font-semibold text-primary-text">
+                  Data Entry Operator (DEO)
+                </h3>
+                <p class="text-sm text-secondary-text">Itronix Solutions</p>
+                <button class="flip-button">View Details</button>
+              </div>
+            </div>
+            <div class="card-back">
+              <h3 class="text-xl font-bold mb-2">Data Entry Operator (DEO)</h3>
+              <p class="text-secondary-text">Provider: Itronix Solutions</p>
+              <p class="text-secondary-text">Issued: July, 2023</p>
+              <button class="flip-button mt-4">Flip Back</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="card-container">
+          <div class="card-inner">
+            <div class="card-front">
+              <img
+                src="Images/TyprScript.png"
+                alt="Infosys Certificate"
+                class="card-image"
+                onerror="this.onerror=null;this.src='https://placehold.co/400x240/2a2a2a/ffffff?text=Image+Not+Found';"
+              />
+              <div class="card-caption">
+                <h3 class="text-lg font-semibold text-primary-text">
+                  TypeScript
+                </h3>
+                <p class="text-sm text-secondary-text">Infosys</p>
+                <button class="flip-button">View Details</button>
+              </div>
+            </div>
+            <div class="card-back">
+              <h3 class="text-xl font-bold mb-2">TypeScript</h3>
+              <p class="text-secondary-text">Provider: Infosys</p>
+              <p class="text-secondary-text">Issued: June, 2025</p>
+              <button class="flip-button mt-4">Flip Back</button>
+            </div>
+          </div>
+        </div>
+      </div>
     </main>
 
     <!-- Footer -->
     <footer class="bg-black py-6 mt-10 border-t border-gray-800 text-center">
-        <p class="text-gray-400">© Rupesh Verma <span id="year"></span> – All Rights Reserved</p>
+      <p class="text-gray-400">
+        © Rupesh Verma <span id="year"></span> – All Rights Reserved
+      </p>
     </footer>
 
     <script>
-        // Set current year in footer
-        document.getElementById('year').textContent = new Date().getFullYear();
+      // Set current year in footer
+      document.getElementById("year").textContent = new Date().getFullYear();
 
-        // Add flip functionality to all cards
-        document.querySelectorAll('.card-container').forEach(card => {
-            card.addEventListener('click', () => {
-                card.querySelector('.card-inner').classList.toggle('flipped');
-            });
+      // Add flip functionality to all cards
+      document.querySelectorAll(".card-container").forEach((card) => {
+        card.addEventListener("click", () => {
+          card.querySelector(".card-inner").classList.toggle("flipped");
         });
+      });
 
-        // Prevent buttons from flipping the card again
-        document.querySelectorAll('.flip-button').forEach(btn => {
-            btn.addEventListener('click', e => {
-                e.stopPropagation(); // Stop the click from bubbling up to the card-container
-                btn.closest('.card-inner').classList.toggle('flipped');
-            });
+      // Prevent buttons from flipping the card again
+      document.querySelectorAll(".flip-button").forEach((btn) => {
+        btn.addEventListener("click", (e) => {
+          e.stopPropagation(); // Stop the click from bubbling up to the card-container
+          btn.closest(".card-inner").classList.toggle("flipped");
         });
+      });
     </script>
-</body>
+  </body>
 </html>
