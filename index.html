@@ -64,7 +64,7 @@
       }
 
       .card:hover {
-        transform: translateY(-6px);
+        transform: translateY(-6px) scale(1.05);
         box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
         border-color: #404040; /* neutral-700 */
       }
@@ -118,6 +118,65 @@
         50% {
           opacity: 0;
         }
+      }
+
+      /* Skill Card Hover Animation */
+      .card {
+        background-color: rgba(23, 23, 23, 0.6); /* neutral-900 with opacity */
+        border: 1px solid #262626; /* neutral-800 */
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .card:hover {
+        transform: translateY(-6px) scale(1.05);
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+        border-color: #404040; /* neutral-700 */
+      }
+
+      /* Footer Icon Hover Effects */
+      .footer-icon {
+        transition: transform 0.3s ease, color 0.3s ease;
+      }
+
+      .footer-icon:hover {
+        transform: scale(1.2);
+      }
+
+      .youtube-icon:hover {
+        color: #ff0000; /* YouTube Red */
+      }
+
+      .linkedin-icon:hover {
+        color: #0077b5; /* LinkedIn Blue */
+      }
+
+      .github-icon:hover {
+        color: #ffffff; /* White */
+      }
+
+      /* Project Card Styles */
+      .project-card {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .project-card img {
+        height: 250px; /* Fixed height for all project images */
+        width: 100%;
+        object-fit: cover;
+      }
+
+      .project-card .content {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .project-card .description {
+        flex: 1;
       }
     </style>
   </head>
@@ -671,16 +730,16 @@
         </h2>
         <div id="projects-grid" class="grid md:grid-cols-2 gap-8">
           <!-- Project Card: NeuroFocus -->
-          <div class="card rounded-xl overflow-hidden">
+          <div class="card rounded-xl overflow-hidden project-card">
             <img
               src="Images/neurofocus.png"
               onerror="this.onerror=null;this.src='https://placehold.co/600x400/171717/a855f7?text=Project+Image';"
               alt="NeuroFocus Project"
-              class="w-full h-auto object-cover"
+              class="w-full object-cover"
             />
-            <div class="p-6">
+            <div class="p-6 content">
               <h3 class="text-xl font-bold text-slate-100 mb-2">NeuroFocus</h3>
-              <p class="text-slate-400 mb-4">
+              <p class="text-slate-400 mb-4 description">
                 A productivity dashboard created using HTML, Tailwind CSS, JS,
                 and Bootstrap.
               </p>
@@ -702,7 +761,7 @@
                   >Bootstrap</span
                 >
               </div>
-              <div class="flex items-center gap-4">
+              <div class="flex items-center gap-4 mt-auto">
                 <a
                   href="https://ekagrah.netlify.app/"
                   target="_blank"
@@ -721,16 +780,16 @@
           </div>
 
           <!-- Project Card: Multitool -->
-          <div class="card rounded-xl overflow-hidden">
+          <div class="card rounded-xl overflow-hidden project-card">
             <img
               src="Images/multitool.png"
               onerror="this.onerror=null;this.src='https://placehold.co/600x400/171717/14b8a6?text=Project+Image';"
               alt="Multitool Project"
-              class="w-full h-auto object-cover"
+              class="w-full object-cover"
             />
-            <div class="p-6">
+            <div class="p-6 content">
               <h3 class="text-xl font-bold text-slate-100 mb-2">ToolNexus</h3>
-              <p class="text-slate-400 mb-4">
+              <p class="text-slate-400 mb-4 description">
                 A collection of multiple productivity tools. Tech used:REACT,
                 Tailwind CSS, Bootstrap.
               </p>
@@ -748,7 +807,7 @@
                   >Bootstrap</span
                 >
               </div>
-              <div class="flex items-center gap-4">
+              <div class="flex items-center gap-4 mt-auto">
                 <a
                   href="https://toolnexus.netlify.app/"
                   target="_blank"
@@ -767,18 +826,18 @@
           </div>
 
           <!-- Project Card: ScanReady-CV -->
-          <div class="card rounded-xl overflow-hidden">
+          <div class="card rounded-xl overflow-hidden project-card">
             <img
               src="Images/pro3.png"
               onerror="this.onerror=null;this.src='https://placehold.co/600x400/171717/38bdf8?text=Project+Image';"
               alt="ScanReady-CV Project"
-              class="w-full h-auto object-cover"
+              class="w-full object-cover"
             />
-            <div class="p-6">
+            <div class="p-6 content">
               <h3 class="text-xl font-bold text-slate-100 mb-2">
                 ScanReady-CV
               </h3>
-              <p class="text-slate-400 mb-4">
+              <p class="text-slate-400 mb-4 description">
                 An ATS-friendly CV builder with pre-filled data and downloadable
                 PDF functionality.
               </p>
@@ -792,7 +851,7 @@
                   >Tailwind CSS</span
                 >
               </div>
-              <div class="flex items-center gap-4">
+              <div class="flex items-center gap-4 mt-auto">
                 <a
                   href="https://scanready-cv.netlify.app/"
                   target="_blank"
@@ -811,18 +870,18 @@
           </div>
 
           <!-- Project Card: IncomeExpense-Watch -->
-          <div class="card rounded-xl overflow-hidden">
+          <div class="card rounded-xl overflow-hidden project-card">
             <img
               src="Images/IET.png"
               onerror="this.onerror=null;this.src='https://placehold.co/600x400/171717/818cf8?text=Project+Image';"
               alt="IncomeExpense-Watch Project"
-              class="w-full h-auto object-cover"
+              class="w-full object-cover"
             />
-            <div class="p-6">
+            <div class="p-6 content">
               <h3 class="text-xl font-bold text-slate-100 mb-2">
                 IncomeExpense-Watch
               </h3>
-              <p class="text-slate-400 mb-4">
+              <p class="text-slate-400 mb-4 description">
                 Track your income and expenses with graphical representation and
                 printable receipts.
               </p>
@@ -840,7 +899,7 @@
                   >HTML/CSS</span
                 >
               </div>
-              <div class="flex items-center gap-4">
+              <div class="flex items-center gap-4 mt-auto">
                 <a
                   href="https://incomexpense-watch.netlify.app/"
                   target="_blank"
@@ -965,21 +1024,21 @@
             <a
               target="_blank"
               href="https://www.youtube.com/@techtruth4u"
-              class="text-slate-400 hover:text-sky-400 transition-colors"
+              class="text-slate-400 transition-colors footer-icon youtube-icon"
             >
               <i data-lucide="youtube" class="w-6 h-6"></i>
             </a>
             <a
               target="_blank"
-              href="https://www.instagram.com/code_4_funn?igsh=ZGptODNicG9yc3Fl"
-              class="text-slate-400 hover:text-sky-400 transition-colors"
+              href="https://github.com/RupeshVerma28"
+              class="text-slate-400 transition-colors footer-icon github-icon"
             >
-              <i data-lucide="instagram" class="w-6 h-6"></i>
+              <i data-lucide="github" class="w-6 h-6"></i>
             </a>
             <a
               target="_blank"
               href="https://www.linkedin.com/in/rupeshverma28/"
-              class="text-slate-400 hover:text-sky-400 transition-colors"
+              class="text-slate-400 transition-colors footer-icon linkedin-icon"
             >
               <i data-lucide="linkedin" class="w-6 h-6"></i>
             </a>
