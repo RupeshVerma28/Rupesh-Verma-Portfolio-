@@ -201,10 +201,8 @@ const Home = () => {
                     </p>
                   </div>
                   <p className="text-slate-400 text-sm">
-                    Developing full-stack applications and designing intuitive
-                    user interfaces for a global clientele on the
-                    <span className="text-green-500 font-semibold"> Fiverr</span>
-                    freelance platform.
+                    Open to freelance projects from July 2025 and still available. 
+                    Developing full-stack applications and designing intuitive user interfaces.
                   </p>
                 </div>
                 <div className="border-t border-neutral-800"></div>
